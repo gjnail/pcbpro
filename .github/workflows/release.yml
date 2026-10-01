@@ -83,13 +83,15 @@ jobs:
             pcbpro_launcher.py
 
       # The packaged app checks itself: 3D, Gerber export, both simulation back ends, the real-time audio model, a
-      # cabinet IR and a tube amp. No GPU here, so Qt's software OpenGL stands in.
+      # cabinet IR and a tube amp. There's no GPU here, so a copy of the app gets Mesa's software OpenGL (the
+      # opengl32sw.dll Qt ships) as its opengl32.dll, which Qt and PyOpenGL then both use. The zip gets the
+      # untouched build.
       - name: Self-test
         shell: pwsh
-        env:
-          QT_OPENGL: software
         run: |
-          $p = Start-Process dist\PCBPro\PCBPro.exe -ArgumentList '--selftest', "$PWD\selftest" -PassThru
+          Copy-Item dist\PCBPro selftest-app -Recurse
+          Copy-Item selftest-app\_internal\PySide6\opengl32sw.dll selftest-app\opengl32.dll
+          $p = Start-Process selftest-app\PCBPro.exe -ArgumentList '--selftest', "$PWD\selftest" -PassThru
           if (-not $p.WaitForExit(300000)) { $p.Kill(); throw "the self-test did not finish in 5 minutes" }
           Get-Content selftest\selftest.txt
           if (-not (Select-String -Path selftest\selftest.txt -Pattern 'RESULT OK' -Quiet)) { throw "self-test failed" }
