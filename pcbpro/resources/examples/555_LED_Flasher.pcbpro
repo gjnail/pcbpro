@@ -1,0 +1,3739 @@
+{
+ "format": "pcbpro",
+ "version": 1,
+ "name": "555 LED Flasher",
+ "author": "PCBPro",
+ "revision": "A",
+ "notes": "",
+ "board": {
+  "outline": [
+   [
+    47.0,
+    0.0
+   ],
+   [
+    47.77645713530756,
+    0.10222252113279495
+   ],
+   [
+    48.5,
+    0.401923788646684
+   ],
+   [
+    49.121320343559645,
+    0.8786796564403572
+   ],
+   [
+    49.598076211353316,
+    1.4999999999999987
+   ],
+   [
+    49.897777478867205,
+    2.223542864692438
+   ],
+   [
+    50.0,
+    2.999999999999999
+   ],
+   [
+    50.0,
+    32.0
+   ],
+   [
+    49.897777478867205,
+    32.77645713530756
+   ],
+   [
+    49.598076211353316,
+    33.5
+   ],
+   [
+    49.121320343559645,
+    34.121320343559645
+   ],
+   [
+    48.5,
+    34.598076211353316
+   ],
+   [
+    47.77645713530756,
+    34.897777478867205
+   ],
+   [
+    47.0,
+    35.0
+   ],
+   [
+    3.0,
+    35.0
+   ],
+   [
+    2.2235428646924373,
+    34.897777478867205
+   ],
+   [
+    1.5000000000000007,
+    34.598076211353316
+   ],
+   [
+    0.8786796564403576,
+    34.121320343559645
+   ],
+   [
+    0.401923788646684,
+    33.5
+   ],
+   [
+    0.1022225211327954,
+    32.77645713530757
+   ],
+   [
+    0.0,
+    32.0
+   ],
+   [
+    0.0,
+    3.0000000000000004
+   ],
+   [
+    0.10222252113279495,
+    2.223542864692438
+   ],
+   [
+    0.401923788646684,
+    1.4999999999999996
+   ],
+   [
+    0.8786796564403572,
+    0.8786796564403576
+   ],
+   [
+    1.4999999999999987,
+    0.40192378864668443
+   ],
+   [
+    2.2235428646924382,
+    0.10222252113279495
+   ],
+   [
+    2.9999999999999996,
+    0.0
+   ]
+  ],
+  "cutouts": [],
+  "thickness": 1.6,
+  "layers": 2,
+  "mask_color": "Green",
+  "silk_color": "White",
+  "finish": "HASL (lead-free)",
+  "copper_oz": 1.0
+ },
+ "rules": {
+  "clearance": 0.2,
+  "track_width": 0.25,
+  "via_diameter": 0.6,
+  "via_drill": 0.3,
+  "min_track": 0.15,
+  "min_drill": 0.3,
+  "min_annular": 0.13,
+  "edge_clearance": 0.3,
+  "hole_to_hole": 0.25,
+  "mask_expansion": 0.05,
+  "tent_vias": true
+ },
+ "netclasses": {
+  "Default": {
+   "name": "Default",
+   "clearance": 0.2,
+   "track_width": 0.25,
+   "via_diameter": 0.6,
+   "via_drill": 0.3
+  }
+ },
+ "net_class_map": {},
+ "extra_nets": [],
+ "components": [
+  {
+   "uid": "b215518bc5b2",
+   "ref": "U1",
+   "value": "NE555",
+   "footprint": {
+    "name": "SOIC-8",
+    "description": "SOIC-8, 3.9x4.9 mm body, 1.27 mm pitch",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.475,
+      "y": -1.905,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": -2.475,
+      "y": -0.635,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "3",
+      "x": -2.475,
+      "y": 0.635,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "4",
+      "x": -2.475,
+      "y": 1.905,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "5",
+      "x": 2.475,
+      "y": 1.905,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "6",
+      "x": 2.475,
+      "y": 0.635,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "7",
+      "x": 2.475,
+      "y": -0.635,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "8",
+      "x": 2.475,
+      "y": -1.905,
+      "w": 1.95,
+      "h": 0.6,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.95,
+        -2.5500000000000003
+       ],
+       [
+        1.95,
+        -2.5500000000000003
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.95,
+        2.5500000000000003
+       ],
+       [
+        1.95,
+        2.5500000000000003
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.35,
+        -2.5500000000000003
+       ],
+       [
+        -1.35,
+        -2.305
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.95,
+        -2.45
+       ],
+       [
+        1.95,
+        -2.45
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.95,
+        -2.45
+       ],
+       [
+        1.95,
+        2.45
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.95,
+        2.45
+       ],
+       [
+        -1.95,
+        2.45
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.95,
+        2.45
+       ],
+       [
+        -1.95,
+        -2.45
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.7,
+        -2.7
+       ],
+       [
+        3.7,
+        -2.7
+       ],
+       [
+        3.7,
+        2.7
+       ],
+       [
+        -3.7,
+        2.7
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.7,
+     -2.7,
+     3.7,
+     2.7
+    ],
+    "model": {
+     "type": "gullwing",
+     "bw": 3.9,
+     "bh": 4.9,
+     "H": 1.5,
+     "body": "#1e1e1e",
+     "lead_w": 0.44999999999999996,
+     "standoff": 0.1,
+     "pin1": true
+    },
+    "ref_pos": [
+     0.0,
+     -3.6
+    ]
+   },
+   "x": 25,
+   "y": 17.5,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "GND",
+    "2": "THR",
+    "3": "OUT",
+    "4": "RESET",
+    "5": "CTRL",
+    "6": "THR",
+    "7": "DISCH",
+    "8": "VCC"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "87121d59ff05",
+   "ref": "C3",
+   "value": "100nF",
+   "footprint": {
+    "name": "C_0805",
+    "description": "Capacitor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#b78a5a",
+     "term": "#c9c9c9",
+     "cls": "C"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 25,
+   "y": 12.2,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "VCC",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "3c34de8a8812",
+   "ref": "R1",
+   "value": "1k",
+   "footprint": {
+    "name": "R_0805",
+    "description": "Resistor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#141414",
+     "term": "#d8d8d8",
+     "cls": "R"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 32.5,
+   "y": 14.0,
+   "rotation": 90,
+   "side": "top",
+   "pad_nets": {
+    "1": "DISCH",
+    "2": "VCC"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "0f252e328bdb",
+   "ref": "R2",
+   "value": "47k",
+   "footprint": {
+    "name": "R_0805",
+    "description": "Resistor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#141414",
+     "term": "#d8d8d8",
+     "cls": "R"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 32.5,
+   "y": 19.5,
+   "rotation": 90,
+   "side": "top",
+   "pad_nets": {
+    "1": "THR",
+    "2": "DISCH"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "5ccdfd00296c",
+   "ref": "C1",
+   "value": "10uF",
+   "footprint": {
+    "name": "C_0805",
+    "description": "Capacitor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#b78a5a",
+     "term": "#c9c9c9",
+     "cls": "C"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 36.0,
+   "y": 19.5,
+   "rotation": 90,
+   "side": "top",
+   "pad_nets": {
+    "1": "GND",
+    "2": "THR"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "a0a11c77df37",
+   "ref": "C2",
+   "value": "10nF",
+   "footprint": {
+    "name": "C_0805",
+    "description": "Capacitor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#b78a5a",
+     "term": "#c9c9c9",
+     "cls": "C"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 31.5,
+   "y": 24.5,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "CTRL",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "0b885877b0b0",
+   "ref": "R4",
+   "value": "10k",
+   "footprint": {
+    "name": "R_0805",
+    "description": "Resistor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#141414",
+     "term": "#d8d8d8",
+     "cls": "R"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 18.0,
+   "y": 13.0,
+   "rotation": 90,
+   "side": "top",
+   "pad_nets": {
+    "1": "RESET",
+    "2": "VCC"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "7a63593f177a",
+   "ref": "R3",
+   "value": "330",
+   "footprint": {
+    "name": "R_0805",
+    "description": "Resistor, 0805 (2012 metric) SMD chip",
+    "pads": [
+     {
+      "number": "1",
+      "x": -0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.9125,
+      "y": 0,
+      "w": 1.025,
+      "h": 1.4,
+      "shape": "roundrect",
+      "kind": "smd",
+      "drill": 0.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        -0.735
+       ],
+       [
+        0.2,
+        -0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.2,
+        0.735
+       ],
+       [
+        0.2,
+        0.735
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        -0.625
+       ],
+       [
+        1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.0,
+        0.625
+       ],
+       [
+        -1.0,
+        -0.625
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        -0.95
+       ],
+       [
+        1.675,
+        0.95
+       ],
+       [
+        -1.675,
+        0.95
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -1.675,
+     -0.95,
+     1.675,
+     0.95
+    ],
+    "model": {
+     "type": "chip",
+     "L": 2.0,
+     "W": 1.25,
+     "H": 0.5,
+     "body": "#141414",
+     "term": "#d8d8d8",
+     "cls": "R"
+    },
+    "ref_pos": [
+     0.0,
+     -1.85
+    ]
+   },
+   "x": 18.0,
+   "y": 21.5,
+   "rotation": 90,
+   "side": "top",
+   "pad_nets": {
+    "2": "OUT",
+    "1": "LED_A"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "28d510f0a446",
+   "ref": "D1",
+   "value": "Red",
+   "footprint": {
+    "name": "LED_D5mm",
+    "description": "LED, 5 mm round, through-hole (pin 1 = cathode)",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.27,
+      "y": 0,
+      "w": 1.8,
+      "h": 1.8,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.9,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.27,
+      "y": 0,
+      "w": 1.8,
+      "h": 1.8,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.9,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "arc",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 2.8,
+      "start": -150,
+      "sweep": 300,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.7800000000000002,
+        -1.25
+       ],
+       [
+        -2.7800000000000002,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -2.75,
+        -2.75
+       ],
+       [
+        2.75,
+        -2.75
+       ],
+       [
+        2.75,
+        2.75
+       ],
+       [
+        -2.75,
+        2.75
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -2.75,
+     -2.75,
+     2.75,
+     2.75
+    ],
+    "model": {
+     "type": "led_tht",
+     "D": 5,
+     "H": 8.6,
+     "color": "#e03030"
+    },
+    "ref_pos": [
+     0.0,
+     -3.65
+    ]
+   },
+   "x": 12.0,
+   "y": 25.5,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "GND",
+    "2": "LED_A"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "d0fde40f4b17",
+   "ref": "C4",
+   "value": "100uF",
+   "footprint": {
+    "name": "CP_Radial_D5mm_P2mm",
+    "description": "Electrolytic capacitor, radial, D5 mm, pitch 2 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.0,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.0,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 2.6,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.7,
+        -1.5
+       ],
+       [
+        -2.9,
+        -1.5
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.3,
+        -1.9
+       ],
+       [
+        -3.3,
+        -1.1
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -2.75,
+        -2.75
+       ],
+       [
+        2.75,
+        -2.75
+       ],
+       [
+        2.75,
+        2.75
+       ],
+       [
+        -2.75,
+        2.75
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -2.75,
+     -2.75,
+     2.75,
+     2.75
+    ],
+    "model": {
+     "type": "radial_cap",
+     "D": 5,
+     "H": 11,
+     "body": "#23336b",
+     "stripe": "#d0d0d0"
+    },
+    "ref_pos": [
+     0.0,
+     -3.65
+    ]
+   },
+   "x": 11.0,
+   "y": 11.0,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "VCC",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "aad3374fc582",
+   "ref": "J1",
+   "value": "PWR 5V",
+   "footprint": {
+    "name": "PinHeader_1x02_P2.54mm",
+    "description": "Pin header, 1x2, 2.54 mm pitch, vertical",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.27,
+      "y": 0.0,
+      "w": 1.7,
+      "h": 1.7,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.27,
+      "y": 0.0,
+      "w": 1.7,
+      "h": 1.7,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.54,
+        -1.27
+       ],
+       [
+        2.54,
+        -1.27
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.54,
+        -1.27
+       ],
+       [
+        2.54,
+        1.27
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.54,
+        1.27
+       ],
+       [
+        -2.54,
+        1.27
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.54,
+        1.27
+       ],
+       [
+        -2.54,
+        -1.27
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.94,
+        -1.27
+       ],
+       [
+        -2.94,
+        1.27
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -2.79,
+        -1.52
+       ],
+       [
+        2.79,
+        -1.52
+       ],
+       [
+        2.79,
+        1.52
+       ],
+       [
+        -2.79,
+        1.52
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -2.79,
+     -1.52,
+     2.79,
+     1.52
+    ],
+    "model": {
+     "type": "header",
+     "cols": 2,
+     "rows": 1,
+     "pitch": 2.54,
+     "body": "#161616",
+     "pin": "#d9b44a"
+    },
+    "ref_pos": [
+     0.0,
+     -2.42
+    ]
+   },
+   "x": 4.5,
+   "y": 17.5,
+   "rotation": 90,
+   "side": "top",
+   "pad_nets": {
+    "1": "VCC",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "b63f96412918",
+   "ref": "SW1",
+   "value": "RESET",
+   "footprint": {
+    "name": "SW_PUSH_6mm",
+    "description": "Tactile push button, 6x6 mm, through-hole. Pins in the same row are internally connected; pressing connects pin 1 to pin 2",
+    "pads": [
+     {
+      "number": "1",
+      "x": -3.25,
+      "y": -2.25,
+      "w": 2.0,
+      "h": 2.0,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.1,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "1",
+      "x": 3.25,
+      "y": -2.25,
+      "w": 2.0,
+      "h": 2.0,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.1,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": -3.25,
+      "y": 2.25,
+      "w": 2.0,
+      "h": 2.0,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.1,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 3.25,
+      "y": 2.25,
+      "w": 2.0,
+      "h": 2.0,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.1,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3,
+        -3.2
+       ],
+       [
+        3,
+        -3.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3,
+        3.2
+       ],
+       [
+        3,
+        3.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.2,
+        -1.2
+       ],
+       [
+        -3.2,
+        1.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.2,
+        -1.2
+       ],
+       [
+        3.2,
+        1.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 1.75,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -4.5,
+        -3.5
+       ],
+       [
+        4.5,
+        -3.5
+       ],
+       [
+        4.5,
+        3.5
+       ],
+       [
+        -4.5,
+        3.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -4.5,
+     -3.5,
+     4.5,
+     3.5
+    ],
+    "model": {
+     "type": "tact",
+     "w": 6.0,
+     "h": 6.0,
+     "H": 3.5,
+     "actuator": 3.5,
+     "act_h": 1.5
+    },
+    "ref_pos": [
+     0.0,
+     -4.4
+    ]
+   },
+   "x": 41.5,
+   "y": 23.5,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "RESET",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "e2fa25f6d4fb",
+   "ref": "H1",
+   "value": "M3",
+   "footprint": {
+    "name": "MountingHole_M3",
+    "description": "Mounting hole for M3 screw, non-plated",
+    "pads": [
+     {
+      "number": "1",
+      "x": 0,
+      "y": 0,
+      "w": 3.2,
+      "h": 3.2,
+      "shape": "circle",
+      "kind": "npth",
+      "drill": 3.2,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "fab",
+      "r": 3.35,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        3.45
+       ],
+       [
+        -3.45,
+        3.45
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.45,
+     -3.45,
+     3.45,
+     3.45
+    ],
+    "model": {
+     "type": "none"
+    },
+    "ref_pos": [
+     0.0,
+     -4.35
+    ]
+   },
+   "x": 4.5,
+   "y": 4.5,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {},
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": false,
+   "show_value": false
+  },
+  {
+   "uid": "a65aa0720f1e",
+   "ref": "H2",
+   "value": "M3",
+   "footprint": {
+    "name": "MountingHole_M3",
+    "description": "Mounting hole for M3 screw, non-plated",
+    "pads": [
+     {
+      "number": "1",
+      "x": 0,
+      "y": 0,
+      "w": 3.2,
+      "h": 3.2,
+      "shape": "circle",
+      "kind": "npth",
+      "drill": 3.2,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "fab",
+      "r": 3.35,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        3.45
+       ],
+       [
+        -3.45,
+        3.45
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.45,
+     -3.45,
+     3.45,
+     3.45
+    ],
+    "model": {
+     "type": "none"
+    },
+    "ref_pos": [
+     0.0,
+     -4.35
+    ]
+   },
+   "x": 45.5,
+   "y": 4.5,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {},
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": false,
+   "show_value": false
+  },
+  {
+   "uid": "bcc97d12b4dd",
+   "ref": "H3",
+   "value": "M3",
+   "footprint": {
+    "name": "MountingHole_M3",
+    "description": "Mounting hole for M3 screw, non-plated",
+    "pads": [
+     {
+      "number": "1",
+      "x": 0,
+      "y": 0,
+      "w": 3.2,
+      "h": 3.2,
+      "shape": "circle",
+      "kind": "npth",
+      "drill": 3.2,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "fab",
+      "r": 3.35,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        3.45
+       ],
+       [
+        -3.45,
+        3.45
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.45,
+     -3.45,
+     3.45,
+     3.45
+    ],
+    "model": {
+     "type": "none"
+    },
+    "ref_pos": [
+     0.0,
+     -4.35
+    ]
+   },
+   "x": 4.5,
+   "y": 30.5,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {},
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": false,
+   "show_value": false
+  },
+  {
+   "uid": "820e08cfd351",
+   "ref": "H4",
+   "value": "M3",
+   "footprint": {
+    "name": "MountingHole_M3",
+    "description": "Mounting hole for M3 screw, non-plated",
+    "pads": [
+     {
+      "number": "1",
+      "x": 0,
+      "y": 0,
+      "w": 3.2,
+      "h": 3.2,
+      "shape": "circle",
+      "kind": "npth",
+      "drill": 3.2,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "fab",
+      "r": 3.35,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        -3.45
+       ],
+       [
+        3.45,
+        3.45
+       ],
+       [
+        -3.45,
+        3.45
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.45,
+     -3.45,
+     3.45,
+     3.45
+    ],
+    "model": {
+     "type": "none"
+    },
+    "ref_pos": [
+     0.0,
+     -4.35
+    ]
+   },
+   "x": 45.5,
+   "y": 30.5,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {},
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": false,
+   "show_value": false
+  }
+ ],
+ "tracks": [
+  {
+   "x1": 32.4,
+   "y1": 18.225,
+   "x2": 32.4,
+   "y2": 15.3,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "DISCH",
+   "uid": "31e28addc2e4"
+  },
+  {
+   "x1": 33.075,
+   "y1": 20.025,
+   "x2": 34.2,
+   "y2": 18.9,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "THR",
+   "uid": "614c004cbd09"
+  },
+  {
+   "x1": 34.2,
+   "y1": 18.9,
+   "x2": 35.325,
+   "y2": 18.9,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "THR",
+   "uid": "834491fd7bb7"
+  },
+  {
+   "x1": 27.0,
+   "y1": 15.3,
+   "x2": 24.525,
+   "y2": 12.825,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "199b0b9a3613"
+  },
+  {
+   "x1": 28.35,
+   "y1": 16.875,
+   "x2": 32.4,
+   "y2": 16.875,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "DISCH",
+   "uid": "c35ebd0df230"
+  },
+  {
+   "x1": 23.4,
+   "y1": 17.1,
+   "x2": 24.3,
+   "y2": 18.0,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "THR",
+   "uid": "cab26fcc6db2"
+  },
+  {
+   "x1": 24.3,
+   "y1": 18.0,
+   "x2": 26.55,
+   "y2": 18.0,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "THR",
+   "uid": "cbe39a089af4"
+  },
+  {
+   "x1": 21.6,
+   "y1": 18.225,
+   "x2": 19.575,
+   "y2": 20.25,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "OUT",
+   "uid": "fa0f9c19fd91"
+  },
+  {
+   "x1": 19.575,
+   "y1": 20.25,
+   "x2": 18.675,
+   "y2": 20.25,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "OUT",
+   "uid": "f366470acc2c"
+  },
+  {
+   "x1": 28.35,
+   "y1": 18.225,
+   "x2": 30.15,
+   "y2": 18.225,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "THR",
+   "uid": "21eae6507c4e"
+  },
+  {
+   "x1": 30.15,
+   "y1": 18.225,
+   "x2": 31.95,
+   "y2": 20.025,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "THR",
+   "uid": "c1bd2e404a3f"
+  },
+  {
+   "x1": 28.35,
+   "y1": 15.525,
+   "x2": 30.375,
+   "y2": 13.5,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "dc00ba66fcfd"
+  },
+  {
+   "x1": 30.375,
+   "y1": 13.5,
+   "x2": 31.95,
+   "y2": 13.5,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "8fbccb9adf00"
+  },
+  {
+   "x1": 17.325,
+   "y1": 22.725,
+   "x2": 15.3,
+   "y2": 24.75,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "LED_A",
+   "uid": "4360fa9949c8"
+  },
+  {
+   "x1": 15.3,
+   "y1": 24.75,
+   "x2": 14.175,
+   "y2": 24.75,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "LED_A",
+   "uid": "91b030f6dd37"
+  },
+  {
+   "x1": 14.175,
+   "y1": 24.75,
+   "x2": 13.95,
+   "y2": 24.975,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "LED_A",
+   "uid": "22999b42c8ce"
+  },
+  {
+   "x1": 28.35,
+   "y1": 19.575,
+   "x2": 30.375,
+   "y2": 21.6,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "CTRL",
+   "uid": "254e38640d55"
+  },
+  {
+   "x1": 30.375,
+   "y1": 21.6,
+   "x2": 30.375,
+   "y2": 23.85,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "CTRL",
+   "uid": "27b95919e3f4"
+  },
+  {
+   "x1": 23.625,
+   "y1": 12.15,
+   "x2": 18.675,
+   "y2": 12.15,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "973e08c70b44"
+  },
+  {
+   "x1": 23.4,
+   "y1": 19.575,
+   "x2": 29.475,
+   "y2": 25.65,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "1d9c71f06bc1"
+  },
+  {
+   "x1": 29.475,
+   "y1": 25.65,
+   "x2": 33.3,
+   "y2": 25.65,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "837c79d9e04c"
+  },
+  {
+   "x1": 33.3,
+   "y1": 25.65,
+   "x2": 37.35,
+   "y2": 21.6,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "1a2dc8a86734"
+  },
+  {
+   "x1": 38.025,
+   "y1": 20.475,
+   "x2": 37.125,
+   "y2": 19.575,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "b6a48139e190"
+  },
+  {
+   "x1": 37.125,
+   "y1": 19.575,
+   "x2": 37.125,
+   "y2": 15.975,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "6da6112759cd"
+  },
+  {
+   "x1": 37.125,
+   "y1": 15.975,
+   "x2": 32.175,
+   "y2": 11.025,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "1700ae268213"
+  },
+  {
+   "x1": 32.175,
+   "y1": 11.025,
+   "x2": 17.325,
+   "y2": 11.025,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "928daac0bfe2"
+  },
+  {
+   "x1": 17.325,
+   "y1": 11.025,
+   "x2": 16.875,
+   "y2": 11.475,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "0f920aa92cb6"
+  },
+  {
+   "x1": 16.875,
+   "y1": 11.475,
+   "x2": 16.875,
+   "y2": 12.6,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "9ac8e160f863"
+  },
+  {
+   "x1": 16.875,
+   "y1": 12.6,
+   "x2": 17.775,
+   "y2": 13.5,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "RESET",
+   "uid": "041720f610f7"
+  },
+  {
+   "x1": 18.45,
+   "y1": 12.375,
+   "x2": 19.125,
+   "y2": 13.05,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "37bc7ea19e92"
+  },
+  {
+   "x1": 19.125,
+   "y1": 13.05,
+   "x2": 19.125,
+   "y2": 14.4,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "36cca42d2af7"
+  },
+  {
+   "x1": 19.125,
+   "y1": 14.4,
+   "x2": 18.675,
+   "y2": 14.85,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "46db65bcc90d"
+  },
+  {
+   "x1": 18.675,
+   "y1": 14.85,
+   "x2": 13.95,
+   "y2": 14.85,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "53edd2bd114e"
+  },
+  {
+   "x1": 13.95,
+   "y1": 14.85,
+   "x2": 10.8,
+   "y2": 11.7,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "72407413b494"
+  },
+  {
+   "x1": 9.225,
+   "y1": 11.7,
+   "x2": 5.85,
+   "y2": 15.075,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "4fd9656bac2f"
+  },
+  {
+   "x1": 5.85,
+   "y1": 15.075,
+   "x2": 5.85,
+   "y2": 16.65,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "69efecadde30"
+  },
+  {
+   "x1": 5.85,
+   "y1": 16.65,
+   "x2": 4.5,
+   "y2": 18.0,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "VCC",
+   "uid": "5d4a91127fe1"
+  },
+  {
+   "x1": 22.525,
+   "y1": 15.595,
+   "x2": 22.5,
+   "y2": 15.3,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "GND",
+   "uid": "127204453990"
+  },
+  {
+   "x1": 22.5,
+   "y1": 15.3,
+   "x2": 22.5,
+   "y2": 14.85,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "GND",
+   "uid": "f22064703f33"
+  },
+  {
+   "x1": 26.55,
+   "y1": 13.05,
+   "x2": 26.325,
+   "y2": 12.825,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "GND",
+   "uid": "4df8791c4b04"
+  },
+  {
+   "x1": 35.325,
+   "y1": 20.475,
+   "x2": 34.875,
+   "y2": 20.475,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "GND",
+   "uid": "bc01a59c2a54"
+  },
+  {
+   "x1": 32.85,
+   "y1": 23.4,
+   "x2": 32.4,
+   "y2": 23.85,
+   "width": 0.25,
+   "layer": "F.Cu",
+   "net": "GND",
+   "uid": "4203f9efa9fc"
+  }
+ ],
+ "vias": [
+  {
+   "x": 22.5,
+   "y": 14.85,
+   "diameter": 0.6,
+   "drill": 0.3,
+   "net": "GND",
+   "uid": "89b19de2db1f"
+  },
+  {
+   "x": 26.55,
+   "y": 13.05,
+   "diameter": 0.6,
+   "drill": 0.3,
+   "net": "GND",
+   "uid": "12baab2bf3c2"
+  },
+  {
+   "x": 34.875,
+   "y": 20.475,
+   "diameter": 0.6,
+   "drill": 0.3,
+   "net": "GND",
+   "uid": "f57894e387f8"
+  },
+  {
+   "x": 32.85,
+   "y": 23.400000000000002,
+   "diameter": 0.6,
+   "drill": 0.3,
+   "net": "GND",
+   "uid": "48bb836af077"
+  }
+ ],
+ "zones": [
+  {
+   "layer": "B.Cu",
+   "net": "GND",
+   "outline": [
+    [
+     47.0,
+     0.0
+    ],
+    [
+     47.77645713530756,
+     0.10222252113279495
+    ],
+    [
+     48.5,
+     0.401923788646684
+    ],
+    [
+     49.121320343559645,
+     0.8786796564403572
+    ],
+    [
+     49.598076211353316,
+     1.4999999999999987
+    ],
+    [
+     49.897777478867205,
+     2.223542864692438
+    ],
+    [
+     50.0,
+     2.999999999999999
+    ],
+    [
+     50.0,
+     32.0
+    ],
+    [
+     49.897777478867205,
+     32.77645713530756
+    ],
+    [
+     49.598076211353316,
+     33.5
+    ],
+    [
+     49.121320343559645,
+     34.121320343559645
+    ],
+    [
+     48.5,
+     34.598076211353316
+    ],
+    [
+     47.77645713530756,
+     34.897777478867205
+    ],
+    [
+     47.0,
+     35.0
+    ],
+    [
+     3.0,
+     35.0
+    ],
+    [
+     2.2235428646924373,
+     34.897777478867205
+    ],
+    [
+     1.5000000000000007,
+     34.598076211353316
+    ],
+    [
+     0.8786796564403576,
+     34.121320343559645
+    ],
+    [
+     0.401923788646684,
+     33.5
+    ],
+    [
+     0.1022225211327954,
+     32.77645713530757
+    ],
+    [
+     0.0,
+     32.0
+    ],
+    [
+     0.0,
+     3.0000000000000004
+    ],
+    [
+     0.10222252113279495,
+     2.223542864692438
+    ],
+    [
+     0.401923788646684,
+     1.4999999999999996
+    ],
+    [
+     0.8786796564403572,
+     0.8786796564403576
+    ],
+    [
+     1.4999999999999987,
+     0.40192378864668443
+    ],
+    [
+     2.2235428646924382,
+     0.10222252113279495
+    ],
+    [
+     2.9999999999999996,
+     0.0
+    ]
+   ],
+   "clearance": 0.3,
+   "min_width": 0.25,
+   "priority": 0,
+   "thermal": true,
+   "thermal_gap": 0.4,
+   "spoke_width": 0.45,
+   "keep_islands": false,
+   "uid": "f73b9e3d32a8"
+  }
+ ],
+ "texts": [
+  {
+   "text": "555 LED FLASHER",
+   "x": 25,
+   "y": 31.5,
+   "size": 1.5,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "8eb9b935a2b6"
+  },
+  {
+   "text": "PCBPro demo  rev A",
+   "x": 25,
+   "y": 31.5,
+   "size": 1.2,
+   "layer": "B.SilkS",
+   "rotation": 0.0,
+   "uid": "8efde126b02b"
+  },
+  {
+   "text": "+5V",
+   "x": 4.5,
+   "y": 22.2,
+   "size": 1.0,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "68ce13e5097e"
+  },
+  {
+   "text": "GND",
+   "x": 4.5,
+   "y": 12.8,
+   "size": 1.0,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "982c7c28314d"
+  }
+ ],
+ "order": {},
+ "pedal": {},
+ "sim": {},
+ "amp": {}
+}

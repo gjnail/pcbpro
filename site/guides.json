@@ -1,0 +1,20 @@
+{
+  "getting-started": {"image": "media/img/welcome.webp", "blurb": "Requirements, installing, the window, a board in six steps, and where things are kept."},
+  "tutorial": {"image": "media/img/pedal-3d.webp", "blurb": "A three-knob overdrive from an empty enclosure to an order, in about 45 minutes."},
+  "examples": {"image": "media/examples/Amp_Modern_High_Gain_50W.webp", "blurb": "Every bundled project: pedals, tube and solid-state amps, and a 555 flasher."},
+  "layout": {"image": "media/img/layout.webp", "blurb": "The board, every tool, the netlist, routing by hand and with the autorouter, pours, net classes and DRC."},
+  "library": {"image": "media/img/library-3d.webp", "blurb": "1,200+ footprints, the parts catalogue, any LCSC part, KiCad libraries, the wizard, and checking against datasheets."},
+  "3d-view": {"image": "media/img/board-3d.webp", "blurb": "The board as it will be made, pedals in their boxes, tubes in their sockets, and glowing LEDs."},
+  "pedals": {"image": "media/img/enclosure.webp", "blurb": "The new-pedal wizard, Hammond enclosures, mirroring, drill templates, enclosure checks and the build sheet."},
+  "amp-designer": {"image": "media/img/designer.webp", "blurb": "Describe the amp, get the circuit, the operating points, the transformers, the sound and a routed board."},
+  "high-gain": {"image": "media/img/designer-gain.webp", "blurb": "Three cascaded-preamp voicings, tightness and depth, the effects loop, and three metal pedals."},
+  "amps": {"image": "media/img/amp-3d.webp", "blurb": "Amp templates, tubes on sockets, IPC-2221B spacing by voltage, the amp checks and the tone stack designer."},
+  "simulation": {"image": "media/img/sim-run.webp", "blurb": "Run the board: LEDs, switches and knobs, the oscilloscope, tubes, amplifier boards and logic."},
+  "firmware": {"image": "media/img/sim-3d-glow.webp", "blurb": "ATmega and ATtiny chips running your real compiled firmware, with timers, PWM, the ADC and serial."},
+  "audio": {"image": "media/img/play-live.webp", "blurb": "Play live, audio play-through, the frequency response and speaker cabinets."},
+  "manufacturing": {"image": "media/img/order.webp", "blurb": "Gerbers, drill files, BOM and CPL, the pre-flight checks and the fab comparison."},
+  "buying-parts": {"image": "media/img/buy-parts.webp", "blurb": "A shopping list with search links at four distributors and four pedal shops, and Tayda drilling."},
+  "shortcuts": {"image": "media/img/drc.webp", "blurb": "Every keyboard shortcut, the command line and the scripts in tools/."},
+  "how-it-works": {"image": "media/img/library-search.webp", "blurb": "The board model, pours, the autorouter, the circuit simulator, tubes, the AVR emulator and the real-time audio model."},
+  "troubleshooting": {"image": "media/img/ratsnest.webp", "blurb": "Fixes for common problems, known issues, and what PCBPro does not do yet."}
+}

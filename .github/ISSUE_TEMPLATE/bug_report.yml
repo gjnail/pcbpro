@@ -1,0 +1,73 @@
+name: Bug report
+description: Something doesn't work, crashes, or gives a wrong result
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report! If a file can make PCBPro run code, or write or delete files it
+        shouldn't, please report it privately instead (see SECURITY.md).
+
+        A saved project (.pcbpro) usually shows the problem best. Only attach designs you have
+        the right to share.
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows 11, Windows 10, macOS, Linux, Other]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: PCBPro version
+      description: Help › About PCBPro, or the commit you run from source.
+      placeholder: 1.0.0, or a commit hash
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How do you run it?
+      options:
+        - The Windows download (PCBPro.exe)
+        - From source (python -m pcbpro)
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Layout editor (placing, connecting, routing, pours)
+        - Autorouter
+        - Design rule check
+        - Parts library (built-in, catalog, LCSC import, KiCad, footprint wizard)
+        - 3D view
+        - Guitar pedals (wizard, enclosures, drilling, build sheet)
+        - Amp Designer
+        - Amp boards and high-voltage checks
+        - Simulation (Run, scope, operating point)
+        - Microcontrollers and firmware (.hex)
+        - Audio (Play live, Audio play-through, cabinets, Listen tab)
+        - Gerbers, drill files, BOM and CPL
+        - Ordering and buying parts
+        - Something else
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: For something that looks wrong, a screenshot helps.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the three-knob overdrive example ...
+        2. Press F5 ...
+  - type: textarea
+    id: log
+    attributes:
+      label: Error message
+      description: The text of the error dialog, or what the terminal printed when running from source.
+      render: text

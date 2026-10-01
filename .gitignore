@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.spec
+*_fab/
+out/
+_site/
+*.stackdump
+THIRD-PARTY-LICENSES.txt
+
+# PCBPro keeps its user data in Documents/PCBPro: when this checkout lives there, the app's own folders land in it
+kicad-footprints/
+library/
+.claude/

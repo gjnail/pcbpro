@@ -1,0 +1,10327 @@
+{
+ "format": "pcbpro",
+ "version": 1,
+ "name": "Tight Boost",
+ "author": "PCBPro",
+ "revision": "A",
+ "notes": "Tight Boost - Tube Screamer style boost / overdrive with a TIGHT low-cut control: in front of a high-gain amp it tightens the low end and pushes the mids (drive low, level high).\n\nCircuit (9 V, VREF 4.5 V, TL072):\n  input      1M pull-down, 100n coupling, 1M bias to VREF, op-amp A as a unity buffer (1M input impedance)\n  TIGHT      47n into 10k + C100K (reverse log) to VREF: a low cut from about 30 Hz (CCW) through 170 Hz (noon)\n             to 340 Hz (CW), before the gain\n  gain       op-amp B non-inverting: 4k7 + 47n to VREF (gain rises above 720 Hz - the mid hump), 51k + DRIVE (B500K)\n             feedback, 51p roll-off, 1N4148 pair across the feedback (soft clipping)\n  tone       1k series, then 100n + TONE (B25K, rheostat) to VREF: a variable treble cut\n  output     10u coupling, LEVEL (A100K) volume pot; 100k keeps the output at 0 V DC (no switch pop)\n  power      1N5817 reverse protection, 47R + 100u / 100n filter, 10k / 10k / 47u VREF, 4k7 LED resistor\n\nWith a high-gain amp: DRIVE near zero, LEVEL up, TIGHT to taste (more for down-tuned and extended-range guitars).\nWire the 3PDT footswitch for true bypass: pads IN and OUT go to the footswitch's effect side, the jacks to its\ncommon lugs, and the third pole switches the LED pad to ground.",
+ "board": {
+  "outline": [
+   [
+    61.05,
+    6.55
+   ],
+   [
+    58.454,
+    6.537
+   ],
+   [
+    57.931,
+    6.379
+   ],
+   [
+    57.547,
+    6.108
+   ],
+   [
+    57.221,
+    5.669
+   ],
+   [
+    57.063,
+    5.146
+   ],
+   [
+    57.05,
+    2.55
+   ],
+   [
+    6.55,
+    2.55
+   ],
+   [
+    6.537,
+    5.146
+   ],
+   [
+    6.412,
+    5.598
+   ],
+   [
+    6.108,
+    6.053
+   ],
+   [
+    5.669,
+    6.379
+   ],
+   [
+    5.146,
+    6.537
+   ],
+   [
+    2.55,
+    6.55
+   ],
+   [
+    2.55,
+    87.55
+   ],
+   [
+    61.05,
+    87.55
+   ]
+  ],
+  "cutouts": [],
+  "thickness": 1.6,
+  "layers": 2,
+  "mask_color": "Black",
+  "silk_color": "White",
+  "finish": "HASL (lead-free)",
+  "copper_oz": 1.0
+ },
+ "rules": {
+  "clearance": 0.25,
+  "track_width": 0.4,
+  "via_diameter": 0.9,
+  "via_drill": 0.45,
+  "min_track": 0.2,
+  "min_drill": 0.3,
+  "min_annular": 0.13,
+  "edge_clearance": 0.5,
+  "hole_to_hole": 0.25,
+  "mask_expansion": 0.05,
+  "tent_vias": true
+ },
+ "netclasses": {
+  "Default": {
+   "name": "Default",
+   "clearance": 0.25,
+   "track_width": 0.4,
+   "via_diameter": 0.9,
+   "via_drill": 0.45
+  },
+  "Power": {
+   "name": "Power",
+   "clearance": 0.3,
+   "track_width": 0.6,
+   "via_diameter": 1.0,
+   "via_drill": 0.5
+  }
+ },
+ "net_class_map": {
+  "9V": "Power",
+  "VD": "Power",
+  "V+": "Power",
+  "GND": "Power"
+ },
+ "extra_nets": [],
+ "components": [
+  {
+   "uid": "fae5c78e0d2f",
+   "ref": "RV1",
+   "value": "A100K",
+   "footprint": {
+    "name": "Pot_Alpha_16mm_RV16AF-41",
+    "description": "Alpha 16 mm pot, right-angle PCB pins (RV16AF-41). Pins 5 mm apart, 16 mm from the shaft. Solder to the back of the board so the shaft points through the enclosure face (drill 7.5 mm).",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "3",
+      "x": 5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 8.4,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.2,
+        0
+       ],
+       [
+        1.2,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0,
+        -1.2
+       ],
+       [
+        0,
+        1.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        18.5667
+       ],
+       [
+        -5.0,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.0,
+        18.4
+       ],
+       [
+        -5.0,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        19.4
+       ],
+       [
+        -4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.6667,
+        18.4
+       ],
+       [
+        5.3333,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.4
+       ],
+       [
+        5.0,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.0,
+        18.8167
+       ],
+       [
+        5.1667,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        18.8167
+       ],
+       [
+        5.3333,
+        18.9833
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.9833
+       ],
+       [
+        5.3333,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        19.2333
+       ],
+       [
+        5.1667,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        19.4
+       ],
+       [
+        4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.8333,
+        19.4
+       ],
+       [
+        4.6667,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 3.5,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        17.35
+       ],
+       [
+        -8.75,
+        17.35
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -8.75,
+     -8.75,
+     8.75,
+     17.35
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        1.6,
+        10.4,
+        8.25
+       ],
+       "c": "#aeb2b8",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.4,
+        10.7,
+        8.5
+       ],
+       "c": "#c3c6cc",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "box",
+       "p": [
+        -7.6,
+        6.0,
+        9.1,
+        7.6,
+        11.5,
+        10.3
+       ],
+       "c": "#6b4a2a",
+       "m": 0
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.7,
+        17.7,
+        3.5
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        17.7,
+        25.7,
+        3.0
+       ],
+       "c": "#dcdee2",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        15.75,
+        -1.6,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        7.6,
+        9.8,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        15.75,
+        -1.6,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        7.6,
+        9.8,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        15.75,
+        -1.6,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        7.6,
+        9.8,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      }
+     ],
+     "panel": {
+      "face": "A",
+      "kind": "pot",
+      "d": 7.5,
+      "standoff": 10.7,
+      "body_r": 8.5,
+      "body_len": 10.7
+     }
+    },
+    "ref_pos": [
+     0.0,
+     -9.95
+    ]
+   },
+   "x": 51.85,
+   "y": 12.75,
+   "rotation": 0.0,
+   "side": "bottom",
+   "pad_nets": {
+    "1": "GND",
+    "2": "OUT",
+    "3": "VOL"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "ab7d5fe92b5a",
+   "ref": "RV2",
+   "value": "B25K",
+   "footprint": {
+    "name": "Pot_Alpha_16mm_RV16AF-41",
+    "description": "Alpha 16 mm pot, right-angle PCB pins (RV16AF-41). Pins 5 mm apart, 16 mm from the shaft. Solder to the back of the board so the shaft points through the enclosure face (drill 7.5 mm).",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "3",
+      "x": 5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 8.4,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.2,
+        0
+       ],
+       [
+        1.2,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0,
+        -1.2
+       ],
+       [
+        0,
+        1.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        18.5667
+       ],
+       [
+        -5.0,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.0,
+        18.4
+       ],
+       [
+        -5.0,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        19.4
+       ],
+       [
+        -4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.6667,
+        18.4
+       ],
+       [
+        5.3333,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.4
+       ],
+       [
+        5.0,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.0,
+        18.8167
+       ],
+       [
+        5.1667,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        18.8167
+       ],
+       [
+        5.3333,
+        18.9833
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.9833
+       ],
+       [
+        5.3333,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        19.2333
+       ],
+       [
+        5.1667,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        19.4
+       ],
+       [
+        4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.8333,
+        19.4
+       ],
+       [
+        4.6667,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 3.5,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        17.35
+       ],
+       [
+        -8.75,
+        17.35
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -8.75,
+     -8.75,
+     8.75,
+     17.35
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        1.6,
+        10.4,
+        8.25
+       ],
+       "c": "#aeb2b8",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.4,
+        10.7,
+        8.5
+       ],
+       "c": "#c3c6cc",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "box",
+       "p": [
+        -7.6,
+        6.0,
+        9.1,
+        7.6,
+        11.5,
+        10.3
+       ],
+       "c": "#6b4a2a",
+       "m": 0
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.7,
+        17.7,
+        3.5
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        17.7,
+        25.7,
+        3.0
+       ],
+       "c": "#dcdee2",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        15.75,
+        -1.6,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        7.6,
+        9.8,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        15.75,
+        -1.6,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        7.6,
+        9.8,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        15.75,
+        -1.6,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        7.6,
+        9.8,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      }
+     ],
+     "panel": {
+      "face": "A",
+      "kind": "pot",
+      "d": 7.5,
+      "standoff": 10.7,
+      "body_r": 8.5,
+      "body_len": 10.7
+     }
+    },
+    "ref_pos": [
+     0.0,
+     -9.95
+    ]
+   },
+   "x": 31.8,
+   "y": 12.75,
+   "rotation": 0.0,
+   "side": "bottom",
+   "pad_nets": {
+    "1": "TONE_C",
+    "2": "VREF",
+    "3": "VREF"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "844e3e690b37",
+   "ref": "RV3",
+   "value": "B500K",
+   "footprint": {
+    "name": "Pot_Alpha_16mm_RV16AF-41",
+    "description": "Alpha 16 mm pot, right-angle PCB pins (RV16AF-41). Pins 5 mm apart, 16 mm from the shaft. Solder to the back of the board so the shaft points through the enclosure face (drill 7.5 mm).",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "3",
+      "x": 5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 8.4,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.2,
+        0
+       ],
+       [
+        1.2,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0,
+        -1.2
+       ],
+       [
+        0,
+        1.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        18.5667
+       ],
+       [
+        -5.0,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.0,
+        18.4
+       ],
+       [
+        -5.0,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        19.4
+       ],
+       [
+        -4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.6667,
+        18.4
+       ],
+       [
+        5.3333,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.4
+       ],
+       [
+        5.0,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.0,
+        18.8167
+       ],
+       [
+        5.1667,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        18.8167
+       ],
+       [
+        5.3333,
+        18.9833
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.9833
+       ],
+       [
+        5.3333,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        19.2333
+       ],
+       [
+        5.1667,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        19.4
+       ],
+       [
+        4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.8333,
+        19.4
+       ],
+       [
+        4.6667,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 3.5,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        17.35
+       ],
+       [
+        -8.75,
+        17.35
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -8.75,
+     -8.75,
+     8.75,
+     17.35
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        1.6,
+        10.4,
+        8.25
+       ],
+       "c": "#aeb2b8",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.4,
+        10.7,
+        8.5
+       ],
+       "c": "#c3c6cc",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "box",
+       "p": [
+        -7.6,
+        6.0,
+        9.1,
+        7.6,
+        11.5,
+        10.3
+       ],
+       "c": "#6b4a2a",
+       "m": 0
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.7,
+        17.7,
+        3.5
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        17.7,
+        25.7,
+        3.0
+       ],
+       "c": "#dcdee2",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        15.75,
+        -1.6,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        7.6,
+        9.8,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        15.75,
+        -1.6,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        7.6,
+        9.8,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        15.75,
+        -1.6,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        7.6,
+        9.8,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      }
+     ],
+     "panel": {
+      "face": "A",
+      "kind": "pot",
+      "d": 7.5,
+      "standoff": 10.7,
+      "body_r": 8.5,
+      "body_len": 10.7
+     }
+    },
+    "ref_pos": [
+     0.0,
+     -9.95
+    ]
+   },
+   "x": 11.75,
+   "y": 12.75,
+   "rotation": 0.0,
+   "side": "bottom",
+   "pad_nets": {
+    "1": "DRV",
+    "2": "OA",
+    "3": "OA"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "1464e514c571",
+   "ref": "RV4",
+   "value": "C100K",
+   "footprint": {
+    "name": "Pot_Alpha_16mm_RV16AF-41",
+    "description": "Alpha 16 mm pot, right-angle PCB pins (RV16AF-41). Pins 5 mm apart, 16 mm from the shaft. Solder to the back of the board so the shaft points through the enclosure face (drill 7.5 mm).",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 0.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "3",
+      "x": 5.0,
+      "y": 16.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.3,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 8.4,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.2,
+        0
+       ],
+       [
+        1.2,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0,
+        -1.2
+       ],
+       [
+        0,
+        1.2
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        18.5667
+       ],
+       [
+        -5.0,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.0,
+        18.4
+       ],
+       [
+        -5.0,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -5.1667,
+        19.4
+       ],
+       [
+        -4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.6667,
+        18.4
+       ],
+       [
+        5.3333,
+        18.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.4
+       ],
+       [
+        5.0,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.0,
+        18.8167
+       ],
+       [
+        5.1667,
+        18.8167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        18.8167
+       ],
+       [
+        5.3333,
+        18.9833
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        18.9833
+       ],
+       [
+        5.3333,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.3333,
+        19.2333
+       ],
+       [
+        5.1667,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        5.1667,
+        19.4
+       ],
+       [
+        4.8333,
+        19.4
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.8333,
+        19.4
+       ],
+       [
+        4.6667,
+        19.2333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 3.5,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        -8.75
+       ],
+       [
+        8.75,
+        17.35
+       ],
+       [
+        -8.75,
+        17.35
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -8.75,
+     -8.75,
+     8.75,
+     17.35
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        1.6,
+        10.4,
+        8.25
+       ],
+       "c": "#aeb2b8",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.4,
+        10.7,
+        8.5
+       ],
+       "c": "#c3c6cc",
+       "m": 1,
+       "seg": 40
+      },
+      {
+       "s": "box",
+       "p": [
+        -7.6,
+        6.0,
+        9.1,
+        7.6,
+        11.5,
+        10.3
+       ],
+       "c": "#6b4a2a",
+       "m": 0
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        10.7,
+        17.7,
+        3.5
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "cyl",
+       "p": [
+        0.0,
+        0.0,
+        17.7,
+        25.7,
+        3.0
+       ],
+       "c": "#dcdee2",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        15.75,
+        -1.6,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -5.35,
+        7.6,
+        9.8,
+        -4.65,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        15.75,
+        -1.6,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        -0.35,
+        7.6,
+        9.8,
+        0.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        15.75,
+        -1.6,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      },
+      {
+       "s": "box",
+       "p": [
+        4.65,
+        7.6,
+        9.8,
+        5.35,
+        16.25,
+        10.3
+       ],
+       "c": "#cfd2d6",
+       "m": 1
+      }
+     ],
+     "panel": {
+      "face": "A",
+      "kind": "pot",
+      "d": 7.5,
+      "standoff": 10.7,
+      "body_r": 8.5,
+      "body_len": 10.7
+     }
+    },
+    "ref_pos": [
+     0.0,
+     -9.95
+    ]
+   },
+   "x": 31.8,
+   "y": 39.75,
+   "rotation": 0.0,
+   "side": "bottom",
+   "pad_nets": {
+    "1": "TGT",
+    "2": "TGT",
+    "3": "VREF"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "a1978a59a8d2",
+   "ref": "D1",
+   "value": "Red",
+   "footprint": {
+    "name": "LED_D3mm",
+    "description": "LED, 3 mm round, through-hole (pin 1 = cathode)",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.27,
+      "y": 0,
+      "w": 1.8,
+      "h": 1.8,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.9,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.27,
+      "y": 0,
+      "w": 1.8,
+      "h": 1.8,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.9,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "arc",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 1.8,
+      "start": -150,
+      "sweep": 300,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.78,
+        -0.75
+       ],
+       [
+        -1.78,
+        0.75
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -2.42,
+        -1.75
+       ],
+       [
+        2.42,
+        -1.75
+       ],
+       [
+        2.42,
+        1.75
+       ],
+       [
+        -2.42,
+        1.75
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -2.42,
+     -1.75,
+     2.42,
+     1.75
+    ],
+    "model": {
+     "type": "led_tht",
+     "D": 3,
+     "H": 6.6,
+     "color": "#e03030"
+    },
+    "ref_pos": [
+     0.0,
+     -2.65
+    ]
+   },
+   "x": 31.8,
+   "y": 81.55,
+   "rotation": 0.0,
+   "side": "bottom",
+   "pad_nets": {
+    "1": "LED",
+    "2": "LED_A"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "5bbaa35fd0db",
+   "ref": "W1",
+   "value": "Off-board",
+   "footprint": {
+    "name": "WirePads_9V_GND_IN_OUT_LED",
+    "description": "Off-board wire pads (9V, GND, IN, OUT, LED), 1 mm holes for 22-24 AWG hook-up wire",
+    "pads": [
+     {
+      "number": "9V",
+      "x": -7.62,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "GND",
+      "x": -3.81,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "IN",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "OUT",
+      "x": 3.81,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "LED",
+      "x": 7.62,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.0,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.7033,
+        -2.1167
+       ],
+       [
+        -8.2033,
+        -2.1167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -8.2033,
+        -2.1167
+       ],
+       [
+        -8.37,
+        -2.2833
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -8.37,
+        -2.2833
+       ],
+       [
+        -8.37,
+        -2.5333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -8.37,
+        -2.5333
+       ],
+       [
+        -8.2033,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -8.2033,
+        -2.7
+       ],
+       [
+        -7.87,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.87,
+        -2.7
+       ],
+       [
+        -7.7033,
+        -2.5333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.7033,
+        -2.5333
+       ],
+       [
+        -7.7033,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.7033,
+        -1.8667
+       ],
+       [
+        -7.87,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.87,
+        -1.7
+       ],
+       [
+        -8.2033,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.5367,
+        -2.7
+       ],
+       [
+        -7.2033,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -7.2033,
+        -1.7
+       ],
+       [
+        -6.87,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.31,
+        -2.5333
+       ],
+       [
+        -4.4767,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.4767,
+        -2.7
+       ],
+       [
+        -4.81,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.81,
+        -2.7
+       ],
+       [
+        -4.9767,
+        -2.5333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.9767,
+        -2.5333
+       ],
+       [
+        -4.9767,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.9767,
+        -1.8667
+       ],
+       [
+        -4.81,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.81,
+        -1.7
+       ],
+       [
+        -4.4767,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.4767,
+        -1.7
+       ],
+       [
+        -4.31,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.31,
+        -1.8667
+       ],
+       [
+        -4.31,
+        -2.1167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.31,
+        -2.1167
+       ],
+       [
+        -4.56,
+        -2.1167
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.1433,
+        -1.7
+       ],
+       [
+        -4.1433,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.1433,
+        -2.7
+       ],
+       [
+        -3.4767,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.4767,
+        -1.7
+       ],
+       [
+        -3.4767,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.31,
+        -2.7
+       ],
+       [
+        -2.8933,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.8933,
+        -2.7
+       ],
+       [
+        -2.6433,
+        -2.45
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.6433,
+        -2.45
+       ],
+       [
+        -2.6433,
+        -1.95
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.6433,
+        -1.95
+       ],
+       [
+        -2.8933,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.8933,
+        -1.7
+       ],
+       [
+        -3.31,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.31,
+        -1.7
+       ],
+       [
+        -3.31,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.5833,
+        -2.7
+       ],
+       [
+        -0.25,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.4167,
+        -2.7
+       ],
+       [
+        -0.4167,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -0.5833,
+        -1.7
+       ],
+       [
+        -0.25,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0.0833,
+        -1.7
+       ],
+       [
+        0.0833,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0.0833,
+        -2.7
+       ],
+       [
+        0.75,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        0.75,
+        -1.7
+       ],
+       [
+        0.75,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.81,
+        -2.7
+       ],
+       [
+        3.1433,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.1433,
+        -2.7
+       ],
+       [
+        3.31,
+        -2.5333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.31,
+        -2.5333
+       ],
+       [
+        3.31,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.31,
+        -1.8667
+       ],
+       [
+        3.1433,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.1433,
+        -1.7
+       ],
+       [
+        2.81,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.81,
+        -1.7
+       ],
+       [
+        2.6433,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.6433,
+        -1.8667
+       ],
+       [
+        2.6433,
+        -2.5333
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.6433,
+        -2.5333
+       ],
+       [
+        2.81,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.4767,
+        -2.7
+       ],
+       [
+        3.4767,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.4767,
+        -1.8667
+       ],
+       [
+        3.6433,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6433,
+        -1.7
+       ],
+       [
+        3.9767,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.9767,
+        -1.7
+       ],
+       [
+        4.1433,
+        -1.8667
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.1433,
+        -1.8667
+       ],
+       [
+        4.1433,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.31,
+        -2.7
+       ],
+       [
+        4.9767,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.6433,
+        -2.7
+       ],
+       [
+        4.6433,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        6.4533,
+        -2.7
+       ],
+       [
+        6.4533,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        6.4533,
+        -1.7
+       ],
+       [
+        7.12,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        7.9533,
+        -2.7
+       ],
+       [
+        7.2867,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        7.2867,
+        -2.7
+       ],
+       [
+        7.2867,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        7.2867,
+        -1.7
+       ],
+       [
+        7.9533,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        7.2867,
+        -2.2
+       ],
+       [
+        7.7867,
+        -2.2
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        8.12,
+        -2.7
+       ],
+       [
+        8.5367,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        8.5367,
+        -2.7
+       ],
+       [
+        8.7867,
+        -2.45
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        8.7867,
+        -2.45
+       ],
+       [
+        8.7867,
+        -1.95
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        8.7867,
+        -1.95
+       ],
+       [
+        8.5367,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        8.5367,
+        -1.7
+       ],
+       [
+        8.12,
+        -1.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        8.12,
+        -1.7
+       ],
+       [
+        8.12,
+        -2.7
+       ]
+      ],
+      "width": 0.15,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -8.97,
+        -3.15
+       ],
+       [
+        8.97,
+        -3.15
+       ],
+       [
+        8.97,
+        1.35
+       ],
+       [
+        -8.97,
+        1.35
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -8.97,
+     -3.15,
+     8.97,
+     1.35
+    ],
+    "model": {
+     "type": "none"
+    },
+    "ref_pos": [
+     0.0,
+     2.5
+    ]
+   },
+   "x": 12.7,
+   "y": 82.55,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "9V": "9V",
+    "GND": "GND",
+    "IN": "IN",
+    "OUT": "OUT",
+    "LED": "LED"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": false,
+   "show_value": false
+  },
+  {
+   "uid": "04617f534eaf",
+   "ref": "U1",
+   "value": "TL072",
+   "footprint": {
+    "name": "DIP-8_W7.62mm",
+    "description": "DIP-8 through-hole package, 300 mil row spacing",
+    "pads": [
+     {
+      "number": "1",
+      "x": -3.81,
+      "y": -3.81,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": -3.81,
+      "y": -1.27,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "3",
+      "x": -3.81,
+      "y": 1.27,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "4",
+      "x": -3.81,
+      "y": 3.81,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "5",
+      "x": 3.81,
+      "y": 3.81,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "6",
+      "x": 3.81,
+      "y": 1.27,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "7",
+      "x": 3.81,
+      "y": -1.27,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "8",
+      "x": 3.81,
+      "y": -3.81,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.5,
+        -5.23
+       ],
+       [
+        2.5,
+        -5.23
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.5,
+        -5.23
+       ],
+       [
+        2.5,
+        5.23
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.5,
+        5.23
+       ],
+       [
+        -2.5,
+        5.23
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.5,
+        5.23
+       ],
+       [
+        -2.5,
+        -5.23
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "arc",
+      "pts": [
+       [
+        0,
+        -5.23
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.9,
+      "start": 180,
+      "sweep": 180,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.175,
+        -5.23
+       ],
+       [
+        3.175,
+        -5.23
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.175,
+        -5.23
+       ],
+       [
+        3.175,
+        5.23
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.175,
+        5.23
+       ],
+       [
+        -3.175,
+        5.23
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.175,
+        5.23
+       ],
+       [
+        -3.175,
+        -5.23
+       ]
+      ],
+      "width": 0.1,
+      "layer": "fab",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -4.86,
+        -5.48
+       ],
+       [
+        4.86,
+        -5.48
+       ],
+       [
+        4.86,
+        5.48
+       ],
+       [
+        -4.86,
+        5.48
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -4.86,
+     -5.48,
+     4.86,
+     5.48
+    ],
+    "model": {
+     "type": "dip",
+     "bw": 6.35,
+     "bh": 10.46,
+     "H": 3.3,
+     "body": "#1c1c1c"
+    },
+    "ref_pos": [
+     0.0,
+     -6.38
+    ]
+   },
+   "x": 15.24,
+   "y": 40.64,
+   "rotation": 0,
+   "side": "top",
+   "pad_nets": {
+    "1": "BUF",
+    "2": "BUF",
+    "3": "NIN",
+    "4": "GND",
+    "5": "HP",
+    "6": "FB",
+    "7": "OA",
+    "8": "V+"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": false
+  },
+  {
+   "uid": "d5a5f9b9a489",
+   "ref": "R5",
+   "value": "51k",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 25.4,
+   "y": 38.1,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "FB",
+    "2": "DRV"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "84c7025b14db",
+   "ref": "R11",
+   "value": "4k7",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 29.21,
+   "y": 73.66,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "V+",
+    "2": "LED_A"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "537327960f38",
+   "ref": "C1",
+   "value": "100n",
+   "footprint": {
+    "name": "C_Rect_L7.2mm_W2.5mm_P5.00mm",
+    "description": "Film box capacitor, L7.2 x W2.5 mm, pitch 5.00 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        1.5
+       ],
+       [
+        -3.85,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.85,
+     -1.5,
+     3.85,
+     1.5
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "box",
+       "p": [
+        -3.6,
+        -1.25,
+        0.3,
+        3.6,
+        1.25,
+        6.0
+       ],
+       "c": "#b0282b",
+       "m": 0,
+       "sp": 0.4
+      }
+     ],
+     "pins": "tht",
+     "pin_top": 0.5
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 12.7,
+   "y": 62.230000000000004,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "IN",
+    "2": "NIN"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "7664348717f5",
+   "ref": "C2",
+   "value": "47n",
+   "footprint": {
+    "name": "C_Rect_L7.2mm_W2.5mm_P5.00mm",
+    "description": "Film box capacitor, L7.2 x W2.5 mm, pitch 5.00 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        1.5
+       ],
+       [
+        -3.85,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.85,
+     -1.5,
+     3.85,
+     1.5
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "box",
+       "p": [
+        -3.6,
+        -1.25,
+        0.3,
+        3.6,
+        1.25,
+        6.0
+       ],
+       "c": "#b0282b",
+       "m": 0,
+       "sp": 0.4
+      }
+     ],
+     "pins": "tht",
+     "pin_top": 0.5
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 15.24,
+   "y": 50.8,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "BUF",
+    "2": "HP"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "6a3519315aeb",
+   "ref": "C5",
+   "value": "100n",
+   "footprint": {
+    "name": "C_Rect_L7.2mm_W2.5mm_P5.00mm",
+    "description": "Film box capacitor, L7.2 x W2.5 mm, pitch 5.00 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        1.5
+       ],
+       [
+        -3.85,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.85,
+     -1.5,
+     3.85,
+     1.5
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "box",
+       "p": [
+        -3.6,
+        -1.25,
+        0.3,
+        3.6,
+        1.25,
+        6.0
+       ],
+       "c": "#b0282b",
+       "m": 0,
+       "sp": 0.4
+      }
+     ],
+     "pins": "tht",
+     "pin_top": 0.5
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 36.83,
+   "y": 24.13,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "TONE",
+    "2": "TONE_C"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "6b61bb8b4c21",
+   "ref": "R3",
+   "value": "10k",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 26.67,
+   "y": 50.8,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "HP",
+    "2": "TGT"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "df0ebf129c55",
+   "ref": "D4",
+   "value": "1N5817",
+   "footprint": {
+    "name": "D_DO-41_P10.16mm",
+    "description": "Diode, DO-41 axial, pitch 10.16 mm (pin 1 = cathode)",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 1.1,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 2.2,
+      "h": 2.2,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 1.1,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.6,
+        -1.35
+       ],
+       [
+        2.6,
+        -1.35
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.6,
+        -1.35
+       ],
+       [
+        2.6,
+        1.35
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.6,
+        1.35
+       ],
+       [
+        -2.6,
+        1.35
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.6,
+        1.35
+       ],
+       [
+        -2.6,
+        -1.35
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.8,
+        -1.35
+       ],
+       [
+        -1.8,
+        1.35
+       ]
+      ],
+      "width": 0.3,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.78,
+        0
+       ],
+       [
+        -2.6,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.78,
+        0
+       ],
+       [
+        2.6,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.43,
+        -1.6
+       ],
+       [
+        6.43,
+        -1.6
+       ],
+       [
+        6.43,
+        1.6
+       ],
+       [
+        -6.43,
+        1.6
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.43,
+     -1.6,
+     6.43,
+     1.6
+    ],
+    "model": {
+     "type": "axial",
+     "L": 5.2,
+     "D": 2.7,
+     "pitch": 10.16,
+     "body": "#1a1a1a",
+     "band": "#c8c8c8"
+    },
+    "ref_pos": [
+     0.0,
+     -2.5
+    ]
+   },
+   "x": 10.16,
+   "y": 74.93,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "2": "9V",
+    "1": "VD"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "5854aa96e065",
+   "ref": "R8",
+   "value": "47R",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 21.59,
+   "y": 62.230000000000004,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "VD",
+    "2": "V+"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "ac72ecaf103b",
+   "ref": "C6",
+   "value": "10u",
+   "footprint": {
+    "name": "CP_Radial_D6.3mm_P2.5mm",
+    "description": "Electrolytic capacitor, radial, D6.3 mm, pitch 2.5 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.25,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.25,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 3.25,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.35,
+        -1.89
+       ],
+       [
+        -3.55,
+        -1.89
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.95,
+        -2.29
+       ],
+       [
+        -3.95,
+        -1.4899999999999998
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.4,
+        -3.4
+       ],
+       [
+        3.4,
+        -3.4
+       ],
+       [
+        3.4,
+        3.4
+       ],
+       [
+        -3.4,
+        3.4
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.4,
+     -3.4,
+     3.4,
+     3.4
+    ],
+    "model": {
+     "type": "radial_cap",
+     "D": 6.3,
+     "H": 11,
+     "body": "#23336b",
+     "stripe": "#d0d0d0"
+    },
+    "ref_pos": [
+     0.0,
+     -4.3
+    ]
+   },
+   "x": 40.64,
+   "y": 35.56,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "TONE",
+    "2": "VOL"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "f353c775fa70",
+   "ref": "R6",
+   "value": "1k",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 40.64,
+   "y": 45.72,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "OA",
+    "2": "TONE"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "e138c7eb8f73",
+   "ref": "R2",
+   "value": "1M",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 5.08,
+   "y": 48.26,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "NIN",
+    "2": "VREF"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "606c1b69fece",
+   "ref": "R1",
+   "value": "1M",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 33.02,
+   "y": 66.04,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "IN",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "77474d00461c",
+   "ref": "R7",
+   "value": "100k",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 52.07,
+   "y": 38.1,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "VOL",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "594606ad0018",
+   "ref": "C4",
+   "value": "51p",
+   "footprint": {
+    "name": "C_Rect_Ceramic_P5.08mm",
+    "description": "Multilayer ceramic capacitor, radial, pitch 5.08 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.54,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 2.54,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.29,
+        -1.25
+       ],
+       [
+        3.29,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.29,
+        -1.25
+       ],
+       [
+        3.29,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.29,
+        1.25
+       ],
+       [
+        -3.29,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.29,
+        1.25
+       ],
+       [
+        -3.29,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.59,
+        -1.5
+       ],
+       [
+        3.59,
+        -1.5
+       ],
+       [
+        3.59,
+        1.5
+       ],
+       [
+        -3.59,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.59,
+     -1.5,
+     3.59,
+     1.5
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "box",
+       "p": [
+        -2.0,
+        -1.25,
+        0.5,
+        2.0,
+        1.25,
+        4.5
+       ],
+       "c": "#c79a3e",
+       "m": 0,
+       "sp": 0.35
+      }
+     ],
+     "pins": "tht",
+     "pin_top": 0.7
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 26.67,
+   "y": 24.13,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "OA",
+    "2": "FB"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "63366e5eb6f3",
+   "ref": "D2",
+   "value": "1N4148",
+   "footprint": {
+    "name": "D_DO-35_P7.62mm",
+    "description": "Diode, DO-35 axial, pitch 7.62 mm (pin 1 = cathode)",
+    "pads": [
+     {
+      "number": "1",
+      "x": -3.81,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 3.81,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.0,
+        -0.95
+       ],
+       [
+        2.0,
+        -0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.0,
+        -0.95
+       ],
+       [
+        2.0,
+        0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.0,
+        0.95
+       ],
+       [
+        -2.0,
+        0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.0,
+        0.95
+       ],
+       [
+        -2.0,
+        -0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.2,
+        -0.95
+       ],
+       [
+        -1.2,
+        0.95
+       ]
+      ],
+      "width": 0.3,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.8099999999999996,
+        0
+       ],
+       [
+        -2.0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.8099999999999996,
+        0
+       ],
+       [
+        2.0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -4.86,
+        -1.2
+       ],
+       [
+        4.86,
+        -1.2
+       ],
+       [
+        4.86,
+        1.2
+       ],
+       [
+        -4.86,
+        1.2
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -4.86,
+     -1.2,
+     4.86,
+     1.2
+    ],
+    "model": {
+     "type": "axial",
+     "L": 4.0,
+     "D": 1.9,
+     "pitch": 7.62,
+     "body": "#d9772c",
+     "band": "#1a1a1a"
+    },
+    "ref_pos": [
+     0.0,
+     -2.1
+    ]
+   },
+   "x": 40.64,
+   "y": 55.88,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "2": "OA",
+    "1": "FB"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "4ba8a3a2583e",
+   "ref": "D3",
+   "value": "1N4148",
+   "footprint": {
+    "name": "D_DO-35_P7.62mm",
+    "description": "Diode, DO-35 axial, pitch 7.62 mm (pin 1 = cathode)",
+    "pads": [
+     {
+      "number": "1",
+      "x": -3.81,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 3.81,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.0,
+        -0.95
+       ],
+       [
+        2.0,
+        -0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.0,
+        -0.95
+       ],
+       [
+        2.0,
+        0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.0,
+        0.95
+       ],
+       [
+        -2.0,
+        0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.0,
+        0.95
+       ],
+       [
+        -2.0,
+        -0.95
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -1.2,
+        -0.95
+       ],
+       [
+        -1.2,
+        0.95
+       ]
+      ],
+      "width": 0.3,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -2.8099999999999996,
+        0
+       ],
+       [
+        -2.0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        2.8099999999999996,
+        0
+       ],
+       [
+        2.0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -4.86,
+        -1.2
+       ],
+       [
+        4.86,
+        -1.2
+       ],
+       [
+        4.86,
+        1.2
+       ],
+       [
+        -4.86,
+        1.2
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -4.86,
+     -1.2,
+     4.86,
+     1.2
+    ],
+    "model": {
+     "type": "axial",
+     "L": 4.0,
+     "D": 1.9,
+     "pitch": 7.62,
+     "body": "#d9772c",
+     "band": "#1a1a1a"
+    },
+    "ref_pos": [
+     0.0,
+     -2.1
+    ]
+   },
+   "x": 50.8,
+   "y": 48.26,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "2": "FB",
+    "1": "OA"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "bc8c9752a5bc",
+   "ref": "R9",
+   "value": "10k",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 48.26,
+   "y": 60.96,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "V+",
+    "2": "VREF"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "d91d14a36243",
+   "ref": "C8",
+   "value": "100n",
+   "footprint": {
+    "name": "C_Rect_L7.2mm_W2.5mm_P5.00mm",
+    "description": "Film box capacitor, L7.2 x W2.5 mm, pitch 5.00 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        1.5
+       ],
+       [
+        -3.85,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.85,
+     -1.5,
+     3.85,
+     1.5
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "box",
+       "p": [
+        -3.6,
+        -1.25,
+        0.3,
+        3.6,
+        1.25,
+        6.0
+       ],
+       "c": "#b0282b",
+       "m": 0,
+       "sp": 0.4
+      }
+     ],
+     "pins": "tht",
+     "pin_top": 0.5
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 40.64,
+   "y": 73.66,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "V+",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "9532ff3877ff",
+   "ref": "R4",
+   "value": "4k7",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 58.42,
+   "y": 49.53,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "FB",
+    "2": "GN"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "0b8f4b222e05",
+   "ref": "C3",
+   "value": "47n",
+   "footprint": {
+    "name": "C_Rect_L7.2mm_W2.5mm_P5.00mm",
+    "description": "Film box capacitor, L7.2 x W2.5 mm, pitch 5.00 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 2.5,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        -1.25
+       ],
+       [
+        3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.6,
+        1.25
+       ],
+       [
+        -3.6,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        -1.5
+       ],
+       [
+        3.85,
+        1.5
+       ],
+       [
+        -3.85,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.85,
+     -1.5,
+     3.85,
+     1.5
+    ],
+    "model": {
+     "type": "composite",
+     "parts": [
+      {
+       "s": "box",
+       "p": [
+        -3.6,
+        -1.25,
+        0.3,
+        3.6,
+        1.25,
+        6.0
+       ],
+       "c": "#b0282b",
+       "m": 0,
+       "sp": 0.4
+      }
+     ],
+     "pins": "tht",
+     "pin_top": 0.5
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 55.88,
+   "y": 60.96,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "GN",
+    "2": "VREF"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "fb7bafe7a757",
+   "ref": "C7",
+   "value": "100u",
+   "footprint": {
+    "name": "CP_Radial_D6.3mm_P2.5mm",
+    "description": "Electrolytic capacitor, radial, D6.3 mm, pitch 2.5 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.25,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.25,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 3.25,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.35,
+        -1.89
+       ],
+       [
+        -3.55,
+        -1.89
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.95,
+        -2.29
+       ],
+       [
+        -3.95,
+        -1.4899999999999998
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.4,
+        -3.4
+       ],
+       [
+        3.4,
+        -3.4
+       ],
+       [
+        3.4,
+        3.4
+       ],
+       [
+        -3.4,
+        3.4
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.4,
+     -3.4,
+     3.4,
+     3.4
+    ],
+    "model": {
+     "type": "radial_cap",
+     "D": 6.3,
+     "H": 11,
+     "body": "#23336b",
+     "stripe": "#d0d0d0"
+    },
+    "ref_pos": [
+     0.0,
+     -4.3
+    ]
+   },
+   "x": 49.53,
+   "y": 73.66,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "V+",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "192b0731be68",
+   "ref": "R10",
+   "value": "10k",
+   "footprint": {
+    "name": "R_Axial_L6.3mm_D2.5mm_P10.16mm",
+    "description": "Resistor, axial 1/4 W, pitch 10.16 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 5.08,
+      "y": 0.0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        -1.25
+       ],
+       [
+        3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.15,
+        1.25
+       ],
+       [
+        -3.15,
+        -1.25
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.08,
+        0
+       ],
+       [
+        -3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        4.08,
+        0
+       ],
+       [
+        3.15,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        -1.5
+       ],
+       [
+        6.13,
+        1.5
+       ],
+       [
+        -6.13,
+        1.5
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -6.13,
+     -1.5,
+     6.13,
+     1.5
+    ],
+    "model": {
+     "type": "axial",
+     "L": 6.3,
+     "D": 2.5,
+     "pitch": 10.16,
+     "body": "#d8c39a",
+     "band": null,
+     "bands": true
+    },
+    "ref_pos": [
+     0.0,
+     -2.4
+    ]
+   },
+   "x": 57.15,
+   "y": 72.39,
+   "rotation": 90.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "VREF",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  },
+  {
+   "uid": "d1f7d98ab820",
+   "ref": "C9",
+   "value": "47u",
+   "footprint": {
+    "name": "CP_Radial_D6.3mm_P2.5mm",
+    "description": "Electrolytic capacitor, radial, D6.3 mm, pitch 2.5 mm",
+    "pads": [
+     {
+      "number": "1",
+      "x": -1.25,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "rect",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     },
+     {
+      "number": "2",
+      "x": 1.25,
+      "y": 0,
+      "w": 1.6,
+      "h": 1.6,
+      "shape": "circle",
+      "kind": "tht",
+      "drill": 0.8,
+      "rotation": 0.0,
+      "roundness": 0.25,
+      "paste": true,
+      "mask_margin": null,
+      "drill_h": 0.0,
+      "points": null
+     }
+    ],
+    "graphics": [
+     {
+      "kind": "circle",
+      "pts": [
+       [
+        0,
+        0
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 3.25,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -4.35,
+        -1.89
+       ],
+       [
+        -3.55,
+        -1.89
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "line",
+      "pts": [
+       [
+        -3.95,
+        -2.29
+       ],
+       [
+        -3.95,
+        -1.4899999999999998
+       ]
+      ],
+      "width": 0.12,
+      "layer": "silk",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     },
+     {
+      "kind": "poly",
+      "pts": [
+       [
+        -3.4,
+        -3.4
+       ],
+       [
+        3.4,
+        -3.4
+       ],
+       [
+        3.4,
+        3.4
+       ],
+       [
+        -3.4,
+        3.4
+       ]
+      ],
+      "width": 0.05,
+      "layer": "crtyd",
+      "r": 0.0,
+      "start": 0.0,
+      "sweep": 0.0,
+      "fill": false
+     }
+    ],
+    "courtyard": [
+     -3.4,
+     -3.4,
+     3.4,
+     3.4
+    ],
+    "model": {
+     "type": "radial_cap",
+     "D": 6.3,
+     "H": 11,
+     "body": "#23336b",
+     "stripe": "#d0d0d0"
+    },
+    "ref_pos": [
+     0.0,
+     -4.3
+    ]
+   },
+   "x": 39.37,
+   "y": 82.55,
+   "rotation": 0.0,
+   "side": "top",
+   "pad_nets": {
+    "1": "VREF",
+    "2": "GND"
+   },
+   "locked": false,
+   "mpn": "",
+   "lcsc": "",
+   "show_ref": true,
+   "show_value": true
+  }
+ ],
+ "tracks": [
+  {
+   "x1": 11.55,
+   "y1": 37.55,
+   "x2": 11.55,
+   "y2": 38.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "BUF",
+   "uid": "e7dec8194421"
+  },
+  {
+   "x1": 18.3,
+   "y1": 50.8,
+   "x2": 20.8,
+   "y2": 50.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "HP",
+   "uid": "12decb838a66"
+  },
+  {
+   "x1": 32.8,
+   "y1": 55.8,
+   "x2": 35.8,
+   "y2": 55.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "TGT",
+   "uid": "e5747417ceb2"
+  },
+  {
+   "x1": 31.8,
+   "y1": 54.8,
+   "x2": 31.8,
+   "y2": 51.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TGT",
+   "uid": "fad46fb43e92"
+  },
+  {
+   "x1": 30.8,
+   "y1": 28.8,
+   "x2": 27.8,
+   "y2": 28.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "2d745352364f"
+  },
+  {
+   "x1": 10.8,
+   "y1": 28.8,
+   "x2": 7.8,
+   "y2": 28.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OA",
+   "uid": "85d4a5d13d2d"
+  },
+  {
+   "x1": 37.8,
+   "y1": 27.8,
+   "x2": 39.05,
+   "y2": 26.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "TONE_C",
+   "uid": "ceafe1c652ef"
+  },
+  {
+   "x1": 39.05,
+   "y1": 26.55,
+   "x2": 39.05,
+   "y2": 24.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "TONE_C",
+   "uid": "2b76452d2df5"
+  },
+  {
+   "x1": 42.55,
+   "y1": 35.8,
+   "x2": 44.55,
+   "y2": 35.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VOL",
+   "uid": "96bca3520d69"
+  },
+  {
+   "x1": 44.55,
+   "y1": 35.8,
+   "x2": 46.3,
+   "y2": 37.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VOL",
+   "uid": "88414ac5c76e"
+  },
+  {
+   "x1": 19.05,
+   "y1": 45.05,
+   "x2": 19.05,
+   "y2": 48.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "HP",
+   "uid": "63b17cb314a5"
+  },
+  {
+   "x1": 19.05,
+   "y1": 48.8,
+   "x2": 17.8,
+   "y2": 50.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "HP",
+   "uid": "7dc1ff4b733f"
+  },
+  {
+   "x1": 19.8,
+   "y1": 41.8,
+   "x2": 24.05,
+   "y2": 41.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "FB",
+   "uid": "8a2cede8a166"
+  },
+  {
+   "x1": 24.05,
+   "y1": 41.8,
+   "x2": 24.8,
+   "y2": 42.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "FB",
+   "uid": "c1809c8e58f9"
+  },
+  {
+   "x1": 46.55,
+   "y1": 29.8,
+   "x2": 44.55,
+   "y2": 31.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VOL",
+   "uid": "d8b79c85e0d4"
+  },
+  {
+   "x1": 44.55,
+   "y1": 31.8,
+   "x2": 44.55,
+   "y2": 32.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VOL",
+   "uid": "8e26e8bcef85"
+  },
+  {
+   "x1": 44.55,
+   "y1": 32.3,
+   "x2": 42.05,
+   "y2": 34.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VOL",
+   "uid": "5057e89a83ea"
+  },
+  {
+   "x1": 48.3,
+   "y1": 73.05,
+   "x2": 48.3,
+   "y2": 66.8,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "8a23365e830b"
+  },
+  {
+   "x1": 49.05,
+   "y1": 55.8,
+   "x2": 53.05,
+   "y2": 55.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "89f2a90f5f90"
+  },
+  {
+   "x1": 53.05,
+   "y1": 55.8,
+   "x2": 55.3,
+   "y2": 58.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "027862946cdd"
+  },
+  {
+   "x1": 36.3,
+   "y1": 46.3,
+   "x2": 40.55,
+   "y2": 50.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OA",
+   "uid": "8f64f04007cc"
+  },
+  {
+   "x1": 40.55,
+   "y1": 50.55,
+   "x2": 40.55,
+   "y2": 51.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OA",
+   "uid": "ef50380d59f2"
+  },
+  {
+   "x1": 30.8,
+   "y1": 80.8,
+   "x2": 34.05,
+   "y2": 77.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "LED_A",
+   "uid": "c1dcd63b49ba"
+  },
+  {
+   "x1": 34.05,
+   "y1": 77.55,
+   "x2": 34.05,
+   "y2": 74.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "LED_A",
+   "uid": "76c573fd0645"
+  },
+  {
+   "x1": 17.8,
+   "y1": 29.8,
+   "x2": 20.3,
+   "y2": 32.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "DRV",
+   "uid": "0220f949364d"
+  },
+  {
+   "x1": 20.3,
+   "y1": 32.3,
+   "x2": 24.55,
+   "y2": 32.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "DRV",
+   "uid": "f5507087201e"
+  },
+  {
+   "x1": 24.55,
+   "y1": 32.3,
+   "x2": 24.8,
+   "y2": 32.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "DRV",
+   "uid": "71a8fd32c513"
+  },
+  {
+   "x1": 38.8,
+   "y1": 73.3,
+   "x2": 41.3,
+   "y2": 73.3,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "aa2c974eff08"
+  },
+  {
+   "x1": 41.3,
+   "y1": 73.3,
+   "x2": 42.55,
+   "y2": 72.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "8fb092341dc3"
+  },
+  {
+   "x1": 42.55,
+   "y1": 72.05,
+   "x2": 46.55,
+   "y2": 72.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "a818c5fe3f97"
+  },
+  {
+   "x1": 46.55,
+   "y1": 72.05,
+   "x2": 47.55,
+   "y2": 73.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "90711b544fcc"
+  },
+  {
+   "x1": 41.3,
+   "y1": 52.05,
+   "x2": 50.05,
+   "y2": 52.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OA",
+   "uid": "422951eac8a3"
+  },
+  {
+   "x1": 11.8,
+   "y1": 40.05,
+   "x2": 11.8,
+   "y2": 40.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "BUF",
+   "uid": "18bc260d9da3"
+  },
+  {
+   "x1": 11.8,
+   "y1": 40.3,
+   "x2": 12.8,
+   "y2": 41.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "BUF",
+   "uid": "f4e9648caafe"
+  },
+  {
+   "x1": 12.8,
+   "y1": 41.3,
+   "x2": 12.8,
+   "y2": 50.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "BUF",
+   "uid": "6df71cbfb4d8"
+  },
+  {
+   "x1": 40.05,
+   "y1": 36.3,
+   "x2": 45.3,
+   "y2": 41.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "51cf5f6da00b"
+  },
+  {
+   "x1": 45.3,
+   "y1": 41.55,
+   "x2": 45.3,
+   "y2": 45.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "de54eba68205"
+  },
+  {
+   "x1": 34.55,
+   "y1": 24.8,
+   "x2": 35.3,
+   "y2": 25.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "7afa3b42be2c"
+  },
+  {
+   "x1": 35.3,
+   "y1": 25.55,
+   "x2": 35.3,
+   "y2": 27.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "53f03756d206"
+  },
+  {
+   "x1": 35.3,
+   "y1": 27.3,
+   "x2": 35.05,
+   "y2": 27.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "af9290ab8763"
+  },
+  {
+   "x1": 35.05,
+   "y1": 27.55,
+   "x2": 35.05,
+   "y2": 31.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "fd47ad2c89be"
+  },
+  {
+   "x1": 35.05,
+   "y1": 31.05,
+   "x2": 38.8,
+   "y2": 34.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "TONE",
+   "uid": "24ac083f83b5"
+  },
+  {
+   "x1": 6.05,
+   "y1": 81.55,
+   "x2": 11.8,
+   "y2": 75.8,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "9V",
+   "uid": "63c4e8e5edc4"
+  },
+  {
+   "x1": 11.8,
+   "y1": 75.8,
+   "x2": 13.8,
+   "y2": 75.8,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "9V",
+   "uid": "0471cf45e39a"
+  },
+  {
+   "x1": 13.8,
+   "y1": 75.8,
+   "x2": 14.3,
+   "y2": 75.3,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "9V",
+   "uid": "f47a0d52b4a6"
+  },
+  {
+   "x1": 51.3,
+   "y1": 45.05,
+   "x2": 51.3,
+   "y2": 47.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "595f17c45076"
+  },
+  {
+   "x1": 51.3,
+   "y1": 47.55,
+   "x2": 57.8,
+   "y2": 54.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "10b20e8dff96"
+  },
+  {
+   "x1": 32.3,
+   "y1": 82.3,
+   "x2": 31.8,
+   "y2": 82.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "LED",
+   "uid": "6f781c54ab63"
+  },
+  {
+   "x1": 31.8,
+   "y1": 82.3,
+   "x2": 31.05,
+   "y2": 83.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "LED",
+   "uid": "13333aa2e21a"
+  },
+  {
+   "x1": 31.05,
+   "y1": 83.05,
+   "x2": 21.55,
+   "y2": 83.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "LED",
+   "uid": "87af464f404d"
+  },
+  {
+   "x1": 21.55,
+   "y1": 83.05,
+   "x2": 21.3,
+   "y2": 82.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "LED",
+   "uid": "d03ffc2aa654"
+  },
+  {
+   "x1": 12.05,
+   "y1": 29.8,
+   "x2": 17.55,
+   "y2": 35.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OA",
+   "uid": "4cb0eac81b10"
+  },
+  {
+   "x1": 17.55,
+   "y1": 35.3,
+   "x2": 17.55,
+   "y2": 37.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OA",
+   "uid": "bb463a7c9444"
+  },
+  {
+   "x1": 17.55,
+   "y1": 37.8,
+   "x2": 18.55,
+   "y2": 38.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OA",
+   "uid": "975787c53f34"
+  },
+  {
+   "x1": 15.55,
+   "y1": 33.05,
+   "x2": 23.8,
+   "y2": 24.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OA",
+   "uid": "b3115e463a3d"
+  },
+  {
+   "x1": 11.05,
+   "y1": 42.55,
+   "x2": 11.05,
+   "y2": 42.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "NIN",
+   "uid": "97584fa92328"
+  },
+  {
+   "x1": 11.05,
+   "y1": 42.8,
+   "x2": 10.05,
+   "y2": 43.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "NIN",
+   "uid": "1fc682953f44"
+  },
+  {
+   "x1": 10.05,
+   "y1": 43.8,
+   "x2": 10.05,
+   "y2": 48.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "NIN",
+   "uid": "eea2a4ac3774"
+  },
+  {
+   "x1": 10.05,
+   "y1": 48.3,
+   "x2": 5.8,
+   "y2": 52.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "NIN",
+   "uid": "8c09c881750c"
+  },
+  {
+   "x1": 5.8,
+   "y1": 54.05,
+   "x2": 13.3,
+   "y2": 61.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "NIN",
+   "uid": "753922f2cbf3"
+  },
+  {
+   "x1": 13.3,
+   "y1": 61.55,
+   "x2": 14.3,
+   "y2": 61.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "NIN",
+   "uid": "e8527abe46d3"
+  },
+  {
+   "x1": 14.3,
+   "y1": 61.55,
+   "x2": 14.55,
+   "y2": 61.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "NIN",
+   "uid": "7eb90fb176c0"
+  },
+  {
+   "x1": 24.8,
+   "y1": 73.05,
+   "x2": 32.8,
+   "y2": 73.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "2461e7672633"
+  },
+  {
+   "x1": 32.8,
+   "y1": 73.05,
+   "x2": 33.8,
+   "y2": 72.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "0d46fd01d44e"
+  },
+  {
+   "x1": 33.8,
+   "y1": 72.05,
+   "x2": 36.3,
+   "y2": 72.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "a7a65421d358"
+  },
+  {
+   "x1": 36.3,
+   "y1": 72.05,
+   "x2": 37.55,
+   "y2": 73.3,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "V+",
+   "uid": "5509e49f0379"
+  },
+  {
+   "x1": 41.3,
+   "y1": 59.05,
+   "x2": 41.3,
+   "y2": 58.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "18e170d43f31"
+  },
+  {
+   "x1": 41.3,
+   "y1": 58.8,
+   "x2": 51.8,
+   "y2": 48.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "2f12811c61f4"
+  },
+  {
+   "x1": 22.05,
+   "y1": 57.8,
+   "x2": 22.05,
+   "y2": 65.05,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "395cb3f49fd1"
+  },
+  {
+   "x1": 22.05,
+   "y1": 65.05,
+   "x2": 23.55,
+   "y2": 66.55,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "9172d178c27f"
+  },
+  {
+   "x1": 23.55,
+   "y1": 66.55,
+   "x2": 23.55,
+   "y2": 73.05,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "445785935378"
+  },
+  {
+   "x1": 19.8,
+   "y1": 39.55,
+   "x2": 21.3,
+   "y2": 41.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OA",
+   "uid": "7b576972ee47"
+  },
+  {
+   "x1": 21.3,
+   "y1": 41.05,
+   "x2": 30.8,
+   "y2": 41.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OA",
+   "uid": "3aeb742de8d9"
+  },
+  {
+   "x1": 30.8,
+   "y1": 41.05,
+   "x2": 34.8,
+   "y2": 45.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OA",
+   "uid": "2c2f0c876769"
+  },
+  {
+   "x1": 10.8,
+   "y1": 62.55,
+   "x2": 13.55,
+   "y2": 65.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "IN",
+   "uid": "2d50718e1232"
+  },
+  {
+   "x1": 13.55,
+   "y1": 65.3,
+   "x2": 27.3,
+   "y2": 65.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "IN",
+   "uid": "ccbade03833f"
+  },
+  {
+   "x1": 13.05,
+   "y1": 81.55,
+   "x2": 13.05,
+   "y2": 65.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "IN",
+   "uid": "ec3fb145c56c"
+  },
+  {
+   "x1": 13.05,
+   "y1": 65.55,
+   "x2": 13.3,
+   "y2": 65.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "IN",
+   "uid": "7bce2d8fd099"
+  },
+  {
+   "x1": 6.05,
+   "y1": 74.05,
+   "x2": 12.05,
+   "y2": 68.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "VD",
+   "uid": "403992a209a1"
+  },
+  {
+   "x1": 12.05,
+   "y1": 68.05,
+   "x2": 20.8,
+   "y2": 68.05,
+   "width": 0.6,
+   "layer": "F.Cu",
+   "net": "VD",
+   "uid": "f1510806bf88"
+  },
+  {
+   "x1": 26.05,
+   "y1": 42.55,
+   "x2": 28.8,
+   "y2": 39.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "f77c050327b6"
+  },
+  {
+   "x1": 28.8,
+   "y1": 39.8,
+   "x2": 28.8,
+   "y2": 24.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "21551d669d81"
+  },
+  {
+   "x1": 56.3,
+   "y1": 59.05,
+   "x2": 58.55,
+   "y2": 61.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VREF",
+   "uid": "ecda6c8c30ae"
+  },
+  {
+   "x1": 58.55,
+   "y1": 61.3,
+   "x2": 58.55,
+   "y2": 76.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VREF",
+   "uid": "ce83b7a370b5"
+  },
+  {
+   "x1": 58.55,
+   "y1": 76.05,
+   "x2": 57.8,
+   "y2": 76.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VREF",
+   "uid": "c77a6ff94fe5"
+  },
+  {
+   "x1": 58.55,
+   "y1": 45.05,
+   "x2": 58.55,
+   "y2": 52.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "GN",
+   "uid": "bebc4eb29275"
+  },
+  {
+   "x1": 58.55,
+   "y1": 52.3,
+   "x2": 59.8,
+   "y2": 53.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "GN",
+   "uid": "c9e6fdc220be"
+  },
+  {
+   "x1": 59.8,
+   "y1": 53.55,
+   "x2": 59.8,
+   "y2": 59.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "GN",
+   "uid": "e652250c1958"
+  },
+  {
+   "x1": 59.8,
+   "y1": 59.55,
+   "x2": 59.05,
+   "y2": 60.3,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "GN",
+   "uid": "495a4d525250"
+  },
+  {
+   "x1": 59.05,
+   "y1": 60.3,
+   "x2": 56.55,
+   "y2": 62.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "GN",
+   "uid": "c8bb162a6933"
+  },
+  {
+   "x1": 56.55,
+   "y1": 62.8,
+   "x2": 56.3,
+   "y2": 62.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "GN",
+   "uid": "ff50cbbd1771"
+  },
+  {
+   "x1": 47.55,
+   "y1": 55.55,
+   "x2": 39.55,
+   "y2": 55.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "37211983659e"
+  },
+  {
+   "x1": 39.55,
+   "y1": 55.55,
+   "x2": 38.05,
+   "y2": 54.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "ef87b9c39bd5"
+  },
+  {
+   "x1": 38.05,
+   "y1": 54.05,
+   "x2": 29.05,
+   "y2": 54.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "89c91eac4b82"
+  },
+  {
+   "x1": 29.05,
+   "y1": 54.05,
+   "x2": 27.8,
+   "y2": 55.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "42b3260b4c73"
+  },
+  {
+   "x1": 56.55,
+   "y1": 77.55,
+   "x2": 43.05,
+   "y2": 77.55,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "9a5a7844977f"
+  },
+  {
+   "x1": 43.05,
+   "y1": 77.55,
+   "x2": 38.8,
+   "y2": 81.8,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "7a9035cd643d"
+  },
+  {
+   "x1": 19.3,
+   "y1": 37.55,
+   "x2": 20.8,
+   "y2": 39.05,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "b62d7b5f97e3"
+  },
+  {
+   "x1": 20.8,
+   "y1": 39.05,
+   "x2": 20.8,
+   "y2": 49.05,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "17336e2ca0f5"
+  },
+  {
+   "x1": 20.8,
+   "y1": 49.05,
+   "x2": 20.05,
+   "y2": 49.8,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "867e95baeb88"
+  },
+  {
+   "x1": 20.05,
+   "y1": 49.8,
+   "x2": 20.05,
+   "y2": 55.3,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "5b01981667b3"
+  },
+  {
+   "x1": 20.05,
+   "y1": 55.3,
+   "x2": 21.3,
+   "y2": 56.55,
+   "width": 0.6,
+   "layer": "B.Cu",
+   "net": "V+",
+   "uid": "d49436e95dcb"
+  },
+  {
+   "x1": 26.55,
+   "y1": 42.3,
+   "x2": 42.05,
+   "y2": 57.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "FB",
+   "uid": "530ce06a6732"
+  },
+  {
+   "x1": 25.8,
+   "y1": 55.3,
+   "x2": 22.8,
+   "y2": 52.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "d8e62094ea25"
+  },
+  {
+   "x1": 22.8,
+   "y1": 52.3,
+   "x2": 16.3,
+   "y2": 52.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "ef18ee1d6ef3"
+  },
+  {
+   "x1": 16.3,
+   "y1": 52.3,
+   "x2": 7.3,
+   "y2": 43.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "845f2c3b42c7"
+  },
+  {
+   "x1": 7.3,
+   "y1": 43.3,
+   "x2": 5.8,
+   "y2": 43.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "677ca8a59903"
+  },
+  {
+   "x1": 26.55,
+   "y1": 29.8,
+   "x2": 23.3,
+   "y2": 33.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VREF",
+   "uid": "eff221e7b853"
+  },
+  {
+   "x1": 23.3,
+   "y1": 33.05,
+   "x2": 23.3,
+   "y2": 52.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "VREF",
+   "uid": "716261d1ef22"
+  },
+  {
+   "x1": 23.3,
+   "y1": 52.05,
+   "x2": 23.05,
+   "y2": 52.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "VREF",
+   "uid": "1b8f208acc1f"
+  },
+  {
+   "x1": 51.55,
+   "y1": 29.8,
+   "x2": 48.3,
+   "y2": 33.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OUT",
+   "uid": "466ea61fac29"
+  },
+  {
+   "x1": 48.3,
+   "y1": 33.05,
+   "x2": 48.3,
+   "y2": 39.3,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OUT",
+   "uid": "39f72e5cbd1e"
+  },
+  {
+   "x1": 48.3,
+   "y1": 39.3,
+   "x2": 34.55,
+   "y2": 53.05,
+   "width": 0.4,
+   "layer": "F.Cu",
+   "net": "OUT",
+   "uid": "bb1d7c358f36"
+  },
+  {
+   "x1": 34.55,
+   "y1": 53.05,
+   "x2": 33.55,
+   "y2": 54.05,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OUT",
+   "uid": "1bfd0be04c11"
+  },
+  {
+   "x1": 33.55,
+   "y1": 54.05,
+   "x2": 33.55,
+   "y2": 65.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OUT",
+   "uid": "18f480e1813c"
+  },
+  {
+   "x1": 33.55,
+   "y1": 65.55,
+   "x2": 25.55,
+   "y2": 73.55,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OUT",
+   "uid": "bdbabbe898e3"
+  },
+  {
+   "x1": 25.55,
+   "y1": 73.55,
+   "x2": 25.55,
+   "y2": 74.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OUT",
+   "uid": "35339cb67e7c"
+  },
+  {
+   "x1": 25.55,
+   "y1": 74.8,
+   "x2": 17.55,
+   "y2": 82.8,
+   "width": 0.4,
+   "layer": "B.Cu",
+   "net": "OUT",
+   "uid": "3b21e8bc10d9"
+  }
+ ],
+ "vias": [
+  {
+   "x": 13.05,
+   "y": 65.55,
+   "diameter": 0.9,
+   "drill": 0.45,
+   "net": "IN",
+   "uid": "e57c36ad9747"
+  },
+  {
+   "x": 59.05,
+   "y": 60.3,
+   "diameter": 0.9,
+   "drill": 0.45,
+   "net": "GN",
+   "uid": "929b0e127cc7"
+  },
+  {
+   "x": 23.3,
+   "y": 52.05,
+   "diameter": 0.9,
+   "drill": 0.45,
+   "net": "VREF",
+   "uid": "ad06bffb047f"
+  },
+  {
+   "x": 34.55,
+   "y": 53.05,
+   "diameter": 0.9,
+   "drill": 0.45,
+   "net": "OUT",
+   "uid": "bbeb19642d76"
+  }
+ ],
+ "zones": [
+  {
+   "layer": "B.Cu",
+   "net": "GND",
+   "outline": [
+    [
+     61.05,
+     6.55
+    ],
+    [
+     58.454,
+     6.537
+    ],
+    [
+     57.931,
+     6.379
+    ],
+    [
+     57.547,
+     6.108
+    ],
+    [
+     57.221,
+     5.669
+    ],
+    [
+     57.063,
+     5.146
+    ],
+    [
+     57.05,
+     2.55
+    ],
+    [
+     6.55,
+     2.55
+    ],
+    [
+     6.537,
+     5.146
+    ],
+    [
+     6.412,
+     5.598
+    ],
+    [
+     6.108,
+     6.053
+    ],
+    [
+     5.669,
+     6.379
+    ],
+    [
+     5.146,
+     6.537
+    ],
+    [
+     2.55,
+     6.55
+    ],
+    [
+     2.55,
+     87.55
+    ],
+    [
+     61.05,
+     87.55
+    ]
+   ],
+   "clearance": 0.4,
+   "min_width": 0.3,
+   "priority": 0,
+   "thermal": true,
+   "thermal_gap": 0.4,
+   "spoke_width": 0.45,
+   "keep_islands": false,
+   "uid": "ad01e04e6f36"
+  },
+  {
+   "layer": "F.Cu",
+   "net": "GND",
+   "outline": [
+    [
+     61.05,
+     6.55
+    ],
+    [
+     58.454,
+     6.537
+    ],
+    [
+     57.931,
+     6.379
+    ],
+    [
+     57.547,
+     6.108
+    ],
+    [
+     57.221,
+     5.669
+    ],
+    [
+     57.063,
+     5.146
+    ],
+    [
+     57.05,
+     2.55
+    ],
+    [
+     6.55,
+     2.55
+    ],
+    [
+     6.537,
+     5.146
+    ],
+    [
+     6.412,
+     5.598
+    ],
+    [
+     6.108,
+     6.053
+    ],
+    [
+     5.669,
+     6.379
+    ],
+    [
+     5.146,
+     6.537
+    ],
+    [
+     2.55,
+     6.55
+    ],
+    [
+     2.55,
+     87.55
+    ],
+    [
+     61.05,
+     87.55
+    ]
+   ],
+   "clearance": 0.4,
+   "min_width": 0.3,
+   "priority": 0,
+   "thermal": true,
+   "thermal_gap": 0.4,
+   "spoke_width": 0.45,
+   "keep_islands": false,
+   "uid": "783a0e526a03"
+  }
+ ],
+ "texts": [
+  {
+   "text": "LEVEL",
+   "x": 51.85,
+   "y": 32.15,
+   "size": 1.3,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "f91db3561481"
+  },
+  {
+   "text": "TONE",
+   "x": 31.8,
+   "y": 32.65,
+   "size": 1.3,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "9761851b8e95"
+  },
+  {
+   "text": "DRIVE",
+   "x": 11.75,
+   "y": 32.15,
+   "size": 1.3,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "6480c98b2296"
+  },
+  {
+   "text": "TIGHT",
+   "x": 31.8,
+   "y": 59.15,
+   "size": 1.3,
+   "layer": "F.SilkS",
+   "rotation": 0.0,
+   "uid": "3b04dca6ee50"
+  },
+  {
+   "text": "PCBPro Tight Boost  rev A",
+   "x": 31.799999999999997,
+   "y": 84.55,
+   "size": 1.0,
+   "layer": "B.SilkS",
+   "rotation": 0.0,
+   "uid": "86b82396a527"
+  }
+ ],
+ "order": {},
+ "pedal": {
+  "enclosure": {
+   "model": "125B",
+   "orientation": "",
+   "cx": 31.8,
+   "cy": 59.65,
+   "face_side": "bottom",
+   "standoff": 0.0,
+   "color": "Green",
+   "knob_color": "Black",
+   "knob_d": 20.0,
+   "led_hole": "bezel",
+   "paint_allowance": 0.0,
+   "lid_clearance": 1.0,
+   "holes": [
+    {
+     "face": "A",
+     "x": 0.0,
+     "y": -40.9,
+     "d": 12.2,
+     "label": "FOOTSWITCH",
+     "kind": "footswitch",
+     "uid": "b67ae2b97769"
+    },
+    {
+     "face": "B",
+     "x": 19.08,
+     "y": 7.4,
+     "d": 9.7,
+     "label": "INPUT",
+     "kind": "jack",
+     "uid": "9c8bdaa549b5"
+    },
+    {
+     "face": "B",
+     "x": -19.08,
+     "y": 7.4,
+     "d": 9.7,
+     "label": "OUTPUT",
+     "kind": "jack",
+     "uid": "4dbcc96029be"
+    },
+    {
+     "face": "B",
+     "x": 0.0,
+     "y": 7.4,
+     "d": 12.0,
+     "label": "9V DC",
+     "kind": "dc",
+     "uid": "88b22a8ae21d"
+    }
+   ]
+  }
+ },
+ "sim": {},
+ "amp": {}
+}

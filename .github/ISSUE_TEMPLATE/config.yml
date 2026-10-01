@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security problem privately
+    url: https://github.com/gjnail/pcbpro/security/advisories/new
+    about: A file that makes PCBPro run code, or write or delete files it shouldn't.
+  - name: Ask a question or show your build
+    url: https://github.com/gjnail/pcbpro/discussions
+    about: How do I route this? Here's the pedal I made. Questions and finished builds go in Discussions.

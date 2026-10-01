@@ -1,0 +1,94 @@
+[
+ {
+  "file": "Three_Knob_Overdrive_125B",
+  "name": "Three-knob overdrive",
+  "category": "pedal",
+  "size": "Hammond 125B, orange · 26 parts",
+  "open": "Pedal › Open example: three-knob overdrive",
+  "blurb": "A TL072 op-amp overdrive with soft diode clipping, a treble-cut tone control and a volume, on a single 9 V supply with a 4.5 V bias. The board the tutorial builds.",
+  "box": true
+ },
+ {
+  "file": "Metal_Tight_Boost_125B",
+  "name": "Tight Boost",
+  "category": "pedal",
+  "size": "Hammond 125B, green · 30 parts",
+  "open": "Amp › Metal pedals › Tight Boost",
+  "blurb": "An input buffer, a TIGHT low cut from 30 to 340 Hz and a Tube Screamer style stage with its 720 Hz mid hump. Drive down, level up, in front of a high-gain amp.",
+  "box": true
+ },
+ {
+  "file": "Metal_Noise_Gate_1590BB2",
+  "name": "Noise Gate (4-cable)",
+  "category": "pedal",
+  "size": "Hammond 1590BB2, black · 39 parts",
+  "open": "Amp › Metal pedals › Noise Gate (4-cable)",
+  "blurb": "Keyed from the guitar, gating the amp's effects loop: a precision envelope detector, a comparator with hysteresis and a J201 shunt gate that opens in under 1 ms. Works as a 2-jack gate too.",
+  "box": true
+ },
+ {
+  "file": "Metal_High_Gain_Distortion_1590BB2",
+  "name": "High-Gain Distortion",
+  "category": "pedal",
+  "size": "Hammond 1590BB2, red · 43 parts",
+  "open": "Amp › Metal pedals › High-Gain Distortion",
+  "blurb": "Two cascaded hard-clipping op-amp stages with a tight low-end pre-emphasis, an amp-style bass, middle and treble stack, and a recovery stage.",
+  "box": true
+ },
+ {
+  "file": "Amp_Tweed_Champ_5W",
+  "name": "Tweed Champ 5 W",
+  "category": "amp",
+  "size": "12AX7 · 6V6GT · 5Y3GT · 38 parts",
+  "open": "Amp › Open example amp › Tweed Champ 5 W single-ended",
+  "blurb": "The simplest tube amp there is: two gain stages into a single-ended 6V6 with cathode bias and a tube rectifier. Breaks up early and sweetly."
+ },
+ {
+  "file": "Amp_EL84_18W_Push-Pull",
+  "name": "EL84 18 W push-pull",
+  "category": "amp",
+  "size": "2 × 12AX7 · 2 × EL84 · EZ81 · 58 parts",
+  "open": "Amp › Open example amp › EL84 18 W push-pull",
+  "blurb": "Two gain stages and a DC-coupled cathode follower into a Marshall-style tone stack, a cathodyne phase inverter and a cathode-biased EL84 pair."
+ },
+ {
+  "file": "Amp_Plexi_Crunch_50W",
+  "name": "Plexi crunch 50 W",
+  "category": "amp",
+  "size": "3 × 12AX7 · 2 × EL34 · 94 parts",
+  "open": "Amp › Open example amp › Plexi crunch 50 W",
+  "blurb": "Made with the Amp Designer: bright, punchy British crunch with a cathode follower, the Marshall tone stack, presence, a master volume and a fixed-bias EL34 pair."
+ },
+ {
+  "file": "Amp_Modern_High_Gain_50W",
+  "name": "Modern high gain 50 W",
+  "category": "amp",
+  "size": "5 × 12AX7 · 2 × 6L6GC · 123 parts",
+  "open": "Amp › Open example amp › Modern high gain 50 W",
+  "blurb": "Made with the Amp Designer: a four-stage preamp with a cold clipper, a post-distortion tone stack, depth and presence, and a tube-buffered effects loop."
+ },
+ {
+  "file": "Amp_Extreme_High_Gain_100W",
+  "name": "Extreme high gain 100 W",
+  "category": "amp",
+  "size": "5 × 12AX7 · 4 × 6L6GC · 149 parts",
+  "open": "Amp › Open example amp › Extreme high gain 100 W",
+  "blurb": "Made with the Amp Designer: five cascaded stages, a deeply scooped EQ with a 10k middle control, a tight low end, DC heaters and four 6L6GCs."
+ },
+ {
+  "file": "Amp_LM3886_Bass_50W",
+  "name": "LM3886 bass amp 50 W",
+  "category": "amp",
+  "size": "TL072 · LM3886 · 63 parts",
+  "open": "Amp › Open example amp › LM3886 bass amp 50 W",
+  "blurb": "A solid-state bass amp: a TL072 preamp with a Bassman-style tone stack and recovery stage, an impedance-balanced XLR DI, and an LM3886 on ±30 V rails into speakON."
+ },
+ {
+  "file": "555_LED_Flasher",
+  "name": "555 LED flasher",
+  "category": "board",
+  "size": "50 × 35 mm · 16 parts",
+  "open": "File › Open example: 555 LED flasher",
+  "blurb": "An NE555 astable flashing a red LED at about 1.5 Hz, with a reset button. Press F5 and it blinks; double-click a net to watch it on the oscilloscope."
+ }
+]

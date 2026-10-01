@@ -1,0 +1,33 @@
+name: Feature request
+description: A part, a check, a pedal or amp feature, or a workflow that would help your builds
+labels: [enhancement]
+body:
+  - type: textarea
+    id: build
+    attributes:
+      label: What are you trying to build?
+      description: Describe the board or the problem first, before a solution.
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference
+      description: Datasheets, schematics, enclosure drawings or fab capability pages help most.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: A new part or footprint, a check, an enclosure, an amp voicing, a simulation model, an export, or something else.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Layout and routing
+        - Parts library
+        - Guitar pedals
+        - Amps
+        - Simulation and audio
+        - Manufacturing and ordering
+        - Something else

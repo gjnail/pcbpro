@@ -1,0 +1,170 @@
+name: Release
+
+# Pushing a tag such as v1.0.0 builds the Windows download and opens a draft GitHub release with it. Running the
+# workflow by hand (Actions > Release > Run workflow) builds the download without a release. See docs/releasing.md.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  version:
+    name: Check version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - id: version
+        run: |
+          version=$(sed -n 's/^__version__ = "\(.*\)"/\1/p' pcbpro/__init__.py | head -1)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if [ "$GITHUB_REF_TYPE" = tag ] && [ "$GITHUB_REF_NAME" != "v$version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME doesn't match version $version in pcbpro/__init__.py"
+            exit 1
+          fi
+          if ! grep -q "^version = \"$version\"" pyproject.toml; then
+            echo "::error::pyproject.toml doesn't say version = \"$version\""
+            exit 1
+          fi
+
+      # The release notes are the CHANGELOG.md section for this version.
+      - name: Release notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          awk -v heading="## [$VERSION]" '
+            index($0, heading) == 1 { found = 1; next }
+            found && /^## \[/ { exit }
+            found
+          ' CHANGELOG.md > notes.md
+          if ! grep -q '[^[:space:]]' notes.md; then
+            echo "::error::CHANGELOG.md has no section for $VERSION"
+            exit 1
+          fi
+          cat notes.md
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-notes
+          path: notes.md
+
+  windows:
+    name: Windows
+    needs: version
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Build PCBPro.exe
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyinstaller
+          python -m PyInstaller --noconfirm --clean --windowed `
+            --name PCBPro `
+            --icon pcbpro\resources\pcbpro.ico `
+            --add-data "pcbpro\resources;pcbpro\resources" `
+            --collect-submodules pcbpro `
+            --exclude-module pygerber --exclude-module pytest --exclude-module tkinter `
+            pcbpro_launcher.py
+
+      # The packaged app checks itself: 3D, Gerber export, both simulation back ends, the real-time audio model, a
+      # cabinet IR and a tube amp. No GPU here, so Qt's software OpenGL stands in.
+      - name: Self-test
+        shell: pwsh
+        env:
+          QT_OPENGL: software
+        run: |
+          $p = Start-Process dist\PCBPro\PCBPro.exe -ArgumentList '--selftest', "$PWD\selftest" -PassThru
+          if (-not $p.WaitForExit(300000)) { $p.Kill(); throw "the self-test did not finish in 5 minutes" }
+          Get-Content selftest\selftest.txt
+          if (-not (Select-String -Path selftest\selftest.txt -Pattern 'RESULT OK' -Quiet)) { throw "self-test failed" }
+
+      # Python's, Qt's and every bundled library's licence. Qt is LGPL v3, which its wheel doesn't include.
+      - name: Third-party licences
+        shell: pwsh
+        run: |
+          Invoke-WebRequest https://www.gnu.org/licenses/lgpl-3.0.txt -OutFile lgpl-3.0.txt
+          Invoke-WebRequest https://www.gnu.org/licenses/gpl-3.0.txt -OutFile gpl-3.0.txt
+          python tools/third_party_licenses.py THIRD-PARTY-LICENSES.txt `
+            --extra "GNU Lesser General Public License v3 (Qt, PySide6, shiboken6)=lgpl-3.0.txt" `
+            --extra "GNU General Public License v3 (referred to by the LGPL v3)=gpl-3.0.txt"
+
+      - name: Package
+        shell: pwsh
+        run: |
+          Copy-Item LICENSE, THIRD-PARTY-LICENSES.txt, README.md dist\PCBPro\
+          New-Item -ItemType Directory out | Out-Null
+          Compress-Archive -Path dist\PCBPro -DestinationPath "out\PCBPro-$env:VERSION-windows-x64.zip"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist-windows
+          path: out/*
+
+  release:
+    name: Draft release
+    needs: [version, windows]
+    if: github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: dist-*
+          path: dist
+          merge-multiple: true
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: release-notes
+
+      - name: Checksums
+        working-directory: dist
+        run: sha256sum * > SHA256SUMS.txt
+
+      # Lets anyone check a download with `gh attestation verify`.
+      - uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: dist/*
+
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat >> notes.md <<EOF
+
+          ## Download
+
+          | System | File |
+          |---|---|
+          | Windows 10 and 11 (x64) | \`PCBPro-$VERSION-windows-x64.zip\` |
+          | macOS and Linux | Run from source: see [Install](https://github.com/$GITHUB_REPOSITORY/blob/main/docs/getting-started.md) |
+
+          Unzip it anywhere and run \`PCBPro.exe\`. The download isn't code-signed yet, so Windows warns the first time you
+          open it: click **More info**, then **Run anyway**. \`SHA256SUMS.txt\` has the checksum, and
+          \`gh attestation verify PCBPro-$VERSION-windows-x64.zip --repo $GITHUB_REPOSITORY\` checks that the zip was
+          built from this repository.
+          EOF
+          gh release create "$GITHUB_REF_NAME" dist/* \
+            --repo "$GITHUB_REPOSITORY" --draft --verify-tag \
+            --title "PCBPro $VERSION" --notes-file notes.md

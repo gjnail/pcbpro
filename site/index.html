@@ -1,0 +1,223 @@
+{{head|PCBPro: PCB design for guitar pedals and amps|PCBPro is a free, open-source PCB designer for guitar pedals, tube amps and everything else: lay out the board, see it in 3D, run the circuit, play your guitar through it, then order the boards and the parts.|}}
+{{header|index}}
+
+<main id="main">
+  <section class="hero">
+    <p class="eyebrow">Free, open-source PCB design</p>
+    <h1>Lay it out. Play it. <em>Order it.</em></h1>
+    <p class="lede">PCBPro is a PCB designer for guitar pedals, amps and everything else. Lay out the board, see it in 3D, run the circuit and play your guitar through it before you build it, then order the boards and the parts.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{download}}">Download for Windows</a>
+      <a class="btn btn-secondary" href="{{repo}}">View on GitHub</a>
+    </div>
+    <p class="hero-meta">Windows 10 and 11 · macOS and Linux from source · MIT license · No account, no cloud</p>
+  </section>
+
+  <div class="showreel" id="showreel">
+    <div class="player">
+      <video id="reel" data-loop autoplay muted loop playsinline preload="metadata" poster="media/video/showreel.jpg">
+        <source src="media/video/showreel.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="caption">PCBPro at work: a pedal in its box, the Amp Designer, the autorouter, a board running in the simulator, and a tube amp in 3D. Every frame is the app itself.</p>
+  </div>
+
+  <!-- pedals -->
+  <section class="section" id="pedals">
+    <div class="feature">
+      <div class="feature-media">{{video|pedal-orbit||Three-knob overdrive}}</div>
+      <div>
+        <p class="kicker">Guitar pedals</p>
+        <h3 style="font-size:38px">From an empty box to a drilled pedal</h3>
+        <p>Pick a Hammond enclosure and your knobs, and PCBPro shapes the board for the box, places the pots, adds the power and bias sections and the wire pads. When the circuit is done, it drills the box from the board.</p>
+        <ul>
+          <li>Nine Hammond boxes, with their cavities, depths, drafts and screw bosses</li>
+          <li>Pots hang under the board, so every drill coordinate is mirrored for you</li>
+          <li>A 1:1 drill template, Tayda coordinates and a build sheet grouped the way you shop</li>
+          <li>Checks that the board, parts, knobs and jacks all fit and clear each other</li>
+        </ul>
+        <a class="more" href="pedals.html">The pedal guide →</a>
+      </div>
+    </div>
+    <div class="shots">
+      {{image|img/pedal-wizard.webp|<b>The new-pedal wizard</b>An enclosure, knobs, jacks and an LED, and you have a board.}}
+      {{image|img/enclosure.webp|<b>Enclosure &amp; Drilling</b>The box unfolded, every hole in Tayda's coordinates.}}
+      {{image|img/pedal-3d-inside.webp|<b>Does it fit?</b>The board inside the box, before you drill anything.}}
+    </div>
+  </section>
+
+  <!-- amp designer -->
+  <section class="section" id="amps">
+    <div class="feature flip green">
+      <div class="feature-media">{{video|designer-voicings||The Amp Designer}}</div>
+      <div>
+        <p class="kicker green">The Amp Designer</p>
+        <h3 style="font-size:38px">Describe the amp. Get the whole build.</h3>
+        <p>Choose guitar or bass, tube or solid state, a voicing from Blackface clean to five-stage extreme high gain, a power stage from 5 to 100 W and the features you want. The designer assembles a proven circuit and works out everything else.</p>
+        <ul>
+          <li>Operating points for every tube and every B+ node, and the transformers to buy</li>
+          <li>The gain of every stage and where the volume knob starts to break up</li>
+          <li>A first power-up checklist and a voltage chart for every tube pin</li>
+          <li>A placed, routed board with high-voltage spacing from IPC-2221B</li>
+        </ul>
+        <a class="more" href="amp-designer.html">The Amp Designer →</a>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-media">{{video|amp-orbit||Plexi crunch 50 W}}</div>
+      <div>
+        <h3>Amp boards built like amp boards</h3>
+        <p>Tubes stand along the rear edge in their sockets, drawn in 3D with glass, plates and glowing heaters. Controls sit on the front edge. Each stage is packed between its tube and its knobs, and the supply is at the far end from the input.</p>
+        <ul>
+          <li>Design rules from each net's voltage: pads and tracks spaced pair by pair</li>
+          <li>Checks for capacitor and resistor ratings, bleeders and tube wiring</li>
+          <li>A tone stack designer with real pot tapers, and 24 tubes with their pinouts</li>
+        </ul>
+        <a class="more" href="amps.html">Amp boards and high voltage →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- listen -->
+  <section class="section" id="listen">
+    <div class="section-head">
+      <p class="kicker">Listen</p>
+      <h2>Hear it before you build it</h2>
+      <p class="sub">Every clip here is a modelled guitar DI played through a board PCBPro designed, simulated part by part, tube by tube, then through one of the built-in cabinet impulse responses. Nothing else was added. The app's Listen tab and Audio play-through make the same sound, and Play live runs your own guitar through the circuit in real time.</p>
+    </div>
+    <p class="subhead">Amp Designer voicings</p>
+    <div class="listen-grid three">
+      {{clips|blackface,tweed,plexi,chime,highgain,modern,extreme}}
+      {{clips|di_metal}}
+    </div>
+    <p class="subhead">Tightness: how much bass reaches the distortion</p>
+    <div class="listen-grid three">
+      {{clips|modern_fat,modern,modern_djent}}
+    </div>
+    <p class="subhead">The bundled pedals</p>
+    <div class="listen-grid three">
+      {{clips|overdrive,tight_boost,distortion}}
+    </div>
+    <p class="listen-note">Rendered at 48 kHz with 2× oversampling by <code>tools/docs_media/audio_clips.py</code>, normalised to the same loudness. Your own DI recording works in the Listen tab and Audio play-through.</p>
+    <p style="margin-top:18px"><a class="more" href="high-gain.html">High-gain amps and metal pedals →</a> &nbsp; <a class="more" href="audio.html">Playing guitar through it →</a></p>
+  </section>
+
+  <!-- simulation -->
+  <section class="section" id="simulate">
+    <div class="feature">
+      <div class="feature-media">{{video|sim-555||The 555 flasher running}}</div>
+      <div>
+        <p class="kicker green">Simulation</p>
+        <h3 style="font-size:38px">Press Run and the board comes alive</h3>
+        <p>LEDs light and blink, copper is tinted by its voltage, overstressed parts start to smoke, and buttons, switches and pots work. Double-click a net to put it on the oscilloscope. It's all PCBPro's own solver, so there's nothing else to install.</p>
+        <ul>
+          <li>Analog parts, op-amps, 555s, regulators, logic chips and 220 real parts by number</li>
+          <li>Vacuum tubes with Koren's models, calibrated to their datasheets</li>
+          <li>ATmega and ATtiny chips running your real compiled firmware, with a serial monitor</li>
+          <li><i>As built</i> mode follows the copper, so a missing track really leaves the LED dark</li>
+        </ul>
+        <a class="more" href="simulation.html">Running the board →</a>
+      </div>
+    </div>
+    <div class="shots">
+      {{image|img/play-live.webp|<b>Play live</b>Your guitar through the circuit, about 10 ms of latency.}}
+      {{image|img/audio.webp|<b>Audio play-through</b>Render a clip, compare dry and processed.}}
+      {{image|img/sim-3d-glow.webp|<b>In 3D too</b>LEDs glow in the 3D view while it runs.}}
+    </div>
+  </section>
+
+  <!-- layout -->
+  <section class="section" id="layout">
+    <div class="section-head">
+      <p class="kicker">The editor</p>
+      <h2>Everything a board needs</h2>
+      <p class="sub">A layout editor that works from the board: place parts, connect their pads, route by hand or let the autorouter do it, pour the ground, and check it all.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-media">{{video|autoroute||The autorouter}}</div>
+      <div>
+        <h3>Route by hand, or don't</h3>
+        <ul>
+          <li>A 45° interactive router that shows clearance problems before you make them</li>
+          <li>An autorouter with vias, layer directions and pour nets stubbed in last</li>
+          <li>Copper pours with thermal reliefs, priorities and island removal, refilled after every edit</li>
+          <li>Net classes, and a design rule check you can click through</li>
+        </ul>
+        <a class="more" href="layout.html">The layout editor →</a>
+      </div>
+    </div>
+    <div class="feature flip">
+      <div class="feature-media">{{image|img/library-3d.webp||Built-in parts}}</div>
+      <div>
+        <h3>Over a million parts</h3>
+        <ul>
+          <li>1,200+ generated footprints, every size and pin count, each with a 3D model</li>
+          <li>About 265 real parts by manufacturer part number</li>
+          <li>Any of LCSC's million-plus parts by its C-number, with its real footprint</li>
+          <li>The official KiCad library's 15,000+ footprints, one click to download</li>
+          <li>Footprints checked pad by pad against KiCad's datasheet-based library</li>
+        </ul>
+        <a class="more" href="library.html">The parts library →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- order -->
+  <section class="section" id="order">
+    <div class="section-head">
+      <p class="kicker">Build it</p>
+      <h2>From the screen to your bench</h2>
+      <p class="sub">Gerbers, drill files, BOM and pick-and-place in one click, a price and delivery comparison across four fabs, and a shopping list with a search link at the shop of your choice.</p>
+    </div>
+    <div class="shots two">
+      {{image|img/order.webp|<b>Order &amp; Manufacture</b>JLCPCB, PCBWay, OSH Park and AISLER compared, your board checked against each.}}
+      {{image|img/buy-parts.webp|<b>Buy components</b>Digi-Key, Mouser, LCSC, Farnell, and the pedal shops: Tayda, Small Bear, Love My Switches, Das Musikding.}}
+    </div>
+  </section>
+
+  <!-- numbers -->
+  <section class="section" id="numbers">
+    <div class="section-head center">
+      <p class="kicker">Under the hood</p>
+      <h2>Engineering, not guesswork</h2>
+      <p class="sub">Footprints are checked against datasheets, Gerbers against an independent parser, tube models against their datasheets, and the real-time audio model against the offline simulator. About 1,850 tests run on every change.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>1,200+</b><span>generated footprints, plus LCSC and KiCad</span></div>
+      <div class="stat"><b>{{example_count}}</b><span>examples, from a 555 flasher to a 100 W five-stage amp</span></div>
+      <div class="stat"><b>24</b><span>tubes, drawn in 3D and simulated with calibrated models</span></div>
+      <div class="stat"><b>MIT</b><span>free for any use, and open to read and change</span></div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><a class="more" href="how-it-works.html">How it works →</a> &nbsp; <a class="more" href="examples.html">The examples →</a></p>
+  </section>
+
+  <!-- install -->
+  <section class="section" id="install">
+    <div class="section-head">
+      <p class="kicker">Get PCBPro</p>
+      <h2>Up and running in a minute</h2>
+      <p class="sub">The Windows download is a folder you unzip and run: no installer, no account. Or run it from source anywhere Python runs.</p>
+    </div>
+    <div class="install">
+      <div class="box">
+        <h3>Windows</h3>
+        <p>Download the latest release, unzip it anywhere and double-click <code>PCBPro.exe</code>.</p>
+        <p><a class="btn btn-primary" href="{{download}}">Download for Windows</a></p>
+      </div>
+      <div class="box">
+        <h3>From source</h3>
+        <p>Python 3.10 or newer. <code>PCBPro.bat</code> on Windows, <code>./pcbpro.sh</code> on macOS and Linux.</p>
+<pre><code>git clone https://github.com/gjnail/pcbpro.git
+cd pcbpro
+./pcbpro.sh</code></pre>
+      </div>
+    </div>
+    <div class="support">
+      <p><b style="color:var(--text)">PCBPro is free.</b> If it saved you a board, a box or a blown fuse and you'd like to say thanks, you can buy me a coffee.</p>
+      <a class="btn btn-secondary" href="{{kofi}}">Support on Ko-fi</a>
+    </div>
+    <p style="margin-top:22px"><a class="btn btn-primary" href="getting-started.html">Install guide</a> <a class="btn btn-secondary" href="tutorial.html" style="margin-left:8px">Tutorial</a></p>
+  </section>
+</main>
+
+{{footer}}

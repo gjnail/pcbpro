@@ -1,0 +1,80 @@
+[
+ {
+  "key": "di_metal",
+  "title": "The DI going in",
+  "caption": "The modelled guitar every high-gain clip plays: palm-muted chugs on the low E, power chords and a short line, as a humbucker and cable deliver it.",
+  "cabinet": ""
+ },
+ {
+  "key": "blackface",
+  "title": "Blackface clean",
+  "caption": "Amp Designer, Blackface clean, 2 \u00d7 6V6 fixed bias. Volume 3, open chords on single coils, 1x12 open-back cabinet.",
+  "cabinet": "1x12_open"
+ },
+ {
+  "key": "tweed",
+  "title": "Tweed breakup",
+  "caption": "Amp Designer, Tweed breakup, no negative feedback. Volume 7, power chords on a humbucker, 1x12 open-back cabinet.",
+  "cabinet": "1x12_open"
+ },
+ {
+  "key": "plexi",
+  "title": "Plexi crunch",
+  "caption": "Amp Designer, Plexi crunch, 2 \u00d7 EL34. Volume 7, power chords on a humbucker, 4x12 slant cabinet.",
+  "cabinet": "4x12_slant"
+ },
+ {
+  "key": "chime",
+  "title": "Chime",
+  "caption": "Amp Designer, Chime, 4 \u00d7 EL84 with no feedback. Volume 5, open chords on single coils, 2x12 closed cabinet.",
+  "cabinet": "2x12_closed"
+ },
+ {
+  "key": "highgain",
+  "title": "British high gain",
+  "caption": "Amp Designer, British high gain (3 stages), 2 \u00d7 EL34. Gain 6, the metal riff, 4x12 cabinet.",
+  "cabinet": "4x12_straight"
+ },
+ {
+  "key": "modern",
+  "title": "Modern high gain",
+  "caption": "Amp Designer, Modern high gain (4 stages), 2 \u00d7 6L6GC. Gain at noon, tightness normal, the metal riff, 4x12 cabinet.",
+  "cabinet": "4x12_straight"
+ },
+ {
+  "key": "extreme",
+  "title": "Extreme high gain",
+  "caption": "Amp Designer, Extreme high gain (5 stages), 4 \u00d7 6L6GC. Gain at noon, tightness tight, the metal riff, 4x12 cabinet.",
+  "cabinet": "4x12_straight"
+ },
+ {
+  "key": "modern_fat",
+  "title": "Tightness: fat",
+  "caption": "Modern high gain with tightness set to fat: more bass reaches the distortion, so the chugs bloom.",
+  "cabinet": "4x12_straight"
+ },
+ {
+  "key": "modern_djent",
+  "title": "Tightness: djent",
+  "caption": "Modern high gain with tightness set to djent: the bass is cut before the distortion and put back after it, so every chug stops dead.",
+  "cabinet": "4x12_straight"
+ },
+ {
+  "key": "overdrive",
+  "title": "Three-knob overdrive",
+  "caption": "The bundled three-knob overdrive pedal (drive 7, tone 5) in front of the Blackface clean amp at volume 3. Both boards are simulated.",
+  "cabinet": "1x12_open"
+ },
+ {
+  "key": "tight_boost",
+  "title": "Tight Boost into British high gain",
+  "caption": "The Metal Tight Boost pedal (drive down, level up, tight at noon) in front of the British high-gain amp. Compare it with the amp alone.",
+  "cabinet": "4x12_straight"
+ },
+ {
+  "key": "distortion",
+  "title": "High-Gain Distortion pedal",
+  "caption": "The Metal High-Gain Distortion pedal (gain 7, EQ at noon) into the Blackface clean amp, the way a distortion pedal is usually played.",
+  "cabinet": "1x12_open"
+ }
+]

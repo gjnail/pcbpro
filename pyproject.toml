@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcbpro"
+version = "1.0.0"
+description = "PCB design for guitar pedals and amps: layout, 3D, a circuit and tube simulator you can play through, and ordering"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Greg Nail" }]
+dependencies = [
+    "PySide6>=6.6",
+    "PyOpenGL>=3.1.7",
+    "numpy>=1.26",
+    "shapely>=2.0",
+    "mapbox-earcut>=1.0",
+    "numba>=0.60",
+    "sounddevice>=0.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pygerber>=2.4", "pyinstaller>=6.10", "markdown>=3.9"]
+
+[project.urls]
+Homepage = "https://gjnail.github.io/pcbpro/"
+Source = "https://github.com/gjnail/pcbpro"
+Changelog = "https://github.com/gjnail/pcbpro/blob/main/CHANGELOG.md"
+Funding = "https://ko-fi.com/gnail"
+
+[project.gui-scripts]
+pcbpro = "pcbpro.app:main"
+
+[tool.setuptools.packages.find]
+include = ["pcbpro*"]
+
+[tool.setuptools.package-data]
+pcbpro = ["resources/*.ico", "resources/examples/*.pcbpro", "resources/irs/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
