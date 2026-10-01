@@ -94,15 +94,14 @@ jobs:
           Get-Content selftest\selftest.txt
           if (-not (Select-String -Path selftest\selftest.txt -Pattern 'RESULT OK' -Quiet)) { throw "self-test failed" }
 
-      # Python's, Qt's and every bundled library's licence. Qt is LGPL v3, which its wheel doesn't include.
+      # Python's, Qt's and every bundled library's licence. Qt is LGPL v3, whose text its wheel doesn't include, so
+      # the FSF's texts are kept in tools/licenses.
       - name: Third-party licences
         shell: pwsh
         run: |
-          Invoke-WebRequest https://www.gnu.org/licenses/lgpl-3.0.txt -OutFile lgpl-3.0.txt
-          Invoke-WebRequest https://www.gnu.org/licenses/gpl-3.0.txt -OutFile gpl-3.0.txt
           python tools/third_party_licenses.py THIRD-PARTY-LICENSES.txt `
-            --extra "GNU Lesser General Public License v3 (Qt, PySide6, shiboken6)=lgpl-3.0.txt" `
-            --extra "GNU General Public License v3 (referred to by the LGPL v3)=gpl-3.0.txt"
+            --extra "GNU Lesser General Public License v3 (Qt, PySide6, shiboken6)=tools/licenses/LGPL-3.0.txt" `
+            --extra "GNU General Public License v3 (referred to by the LGPL v3)=tools/licenses/GPL-3.0.txt"
 
       - name: Package
         shell: pwsh

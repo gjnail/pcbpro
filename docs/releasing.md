@@ -35,8 +35,8 @@ again.
 
 Every download includes `LICENSE` and `THIRD-PARTY-LICENSES.txt`: Python's licence, and the name, version, licence
 and full licence texts of every library the app bundles (PySide6 and Qt, NumPy, Shapely, numba and llvmlite,
-PyOpenGL, sounddevice and PortAudio, mapbox-earcut, cffi, pycparser). Qt is used under the LGPL v3, which its wheels
-don't include, so the workflow downloads the LGPL and GPL texts from gnu.org and adds them.
+PyOpenGL, sounddevice and PortAudio, mapbox-earcut, cffi, pycparser). Qt is used under the LGPL v3, whose text its
+wheels don't include, so the FSF's LGPL and GPL texts are kept in `tools/licenses` and added too.
 `tools/third_party_licenses.py` writes the file; if a new dependency is added, add it to the list at the top of that
 script.
 
