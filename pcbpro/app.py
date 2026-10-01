@@ -39,12 +39,15 @@ def _schedule_selftest(app, win, out_dir: str) -> None:
             view = win.page3d.view
             img = view.grabFramebuffer()
             img.save(str(out / "selftest_3d.png"))
-            report.append(f"3d meshes={len(view.meshes)} image={img.width()}x{img.height()}")
+            # build machines without a GPU (CI) have no usable OpenGL: the 3D step still runs but isn't required
+            gpu = not os.environ.get("PCBPRO_SELFTEST_NO_GPU")
+            report.append(f"3d meshes={len(view.meshes)} image={img.width()}x{img.height()}"
+                          + ("" if gpu else " (not required: PCBPRO_SELFTEST_NO_GPU)"))
             zp = win.order_page.export_files(str(out / "selftest_fab"))
             report.append(f"export={zp.name}")
             counts = win.lib_index.counts()
             report.append("library=" + ", ".join(f"{k}:{v}" for k, v in counts.items()))
-            ok = len(view.meshes) > 5 and counts["builtin"] > 1000 and counts["catalog"] > 200
+            ok = (len(view.meshes) > 5 or not gpu) and counts["builtin"] > 1000 and counts["catalog"] > 200
             state["ok"] = ok
             # simulation: the circuit in-process, then the worker process the UI uses (spawned exe in builds)
             from .sim.session import SimRunner

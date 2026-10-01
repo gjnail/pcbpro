@@ -101,7 +101,7 @@ python -m pcbpro [project.pcbpro] [--example] [--no-welcome] [--selftest DIR]
 | `project.pcbpro` | Opens that project |
 | `--example` | Opens the demo board (the 555 LED flasher) |
 | `--no-welcome` | Skips the start screen |
-| `--selftest DIR` | Checks an installed build, then exits. It renders the example in 3D, exports its Gerbers to `DIR`, simulates it in-process and in a worker process, compiles the real-time audio model and runs a block through it, convolves a built-in cabinet IR, plays the Tweed Champ amp board, and writes `DIR/selftest.txt` ending in `RESULT OK` or `RESULT FAIL`. |
+| `--selftest DIR` | Checks an installed build, then exits. It renders the example in 3D, exports its Gerbers to `DIR`, simulates it in-process and in a worker process, compiles the real-time audio model and runs a block through it, convolves a built-in cabinet IR, plays the Tweed Champ amp board, and writes `DIR/selftest.txt` ending in `RESULT OK` or `RESULT FAIL`. On a machine without a GPU, set `PCBPRO_SELFTEST_NO_GPU=1` to make the 3D step optional. |
 
 ### Scripts in `tools/`
 

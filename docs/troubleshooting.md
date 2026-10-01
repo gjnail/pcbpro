@@ -60,7 +60,7 @@ Fixes for common problems, and what PCBPro doesn't do (yet). If something here d
 
 What PCBPro doesn't do yet:
 
-- **Platforms.** Windows 10 and 11 are what it's built and tested on. macOS and Linux run from source, but haven't been used much; reports are welcome.
+- **Platforms.** Windows 10 and 11 are what it's built and tested on. The test suite also runs on Linux and macOS for every change (the 3D view's tests on Linux only, since GitHub's Windows and macOS machines have no GPU), and the 3D view hasn't been checked on a Mac. macOS and Linux run from source and haven't been used much; reports are welcome.
 - **No schematic editor.** You make the netlist on the board. Netlist import from other tools isn't supported either.
 - **Layers.** Two or four copper layers. No blind or buried vias, no flex or rigid-flex.
 - **Routing.** The autorouter is a grid router: no push-and-shove, differential pairs or length matching. Interactive routing doesn't shove other tracks.

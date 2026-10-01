@@ -21,8 +21,9 @@ the workflow, `pcbpro_launcher.py`, the resources or the dependencies. The zip i
    ```
 
 4. The workflow checks that the tag matches both version numbers and that the changelog has a section for it. It
-   builds `PCBPro.exe` with PyInstaller, runs the packaged app's own self-test (`--selftest`: 3D, Gerber export,
-   both simulation back ends, the real-time audio model, a cabinet IR and a tube amp), collects the licences,
+   builds `PCBPro.exe` with PyInstaller, runs the packaged app's own self-test (`--selftest`: Gerber export, both
+   simulation back ends, the real-time audio model, a cabinet IR and a tube amp; GitHub's machines have no GPU, so
+   `PCBPRO_SELFTEST_NO_GPU` makes the 3D step optional there), collects the licences,
    zips `dist/PCBPro` as `PCBPro-x.y.z-windows-x64.zip`, and opens a draft release with the zip,
    `SHA256SUMS.txt` and a build provenance attestation.
 5. Look over the draft on the Releases page, download the zip and try it, then click **Publish release**.
